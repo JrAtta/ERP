@@ -6,9 +6,35 @@ body{
 }
 :root{
   --main:#0054a6;
+  --main-hover:rgb(0 84 166 / 80%);
   --light:#fcfdfe;
 
 }
 a {text-decoration: none;}
 li { list-style: none; }
 img, ion-icon, button, a { display: block; }
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transition{
+  transition: all .3s ease;
+}
+.form-control{
+
+  &:focus{
+    box-shadow: none;
+  }
+}
+.btn-main{
+  background: var(--main);
+  color: var(--light);
+  border-radius: 5px;
+  padding-block: 10px;
+  border: none;
+  &:hover{
+    background: var(--main-hover);
+  }
+}
