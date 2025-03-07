@@ -1,0 +1,67 @@
+
+.navbar{
+  width: calc( 100% - 240px );
+  @media (max-width:992px) {
+    width: 100%;
+  }
+}
+.dropdown{
+  .dropdown-menu{
+    .dropdown-item{
+      &:active{
+        background: transparent;
+        color: #000;
+      }
+    }
+  }
+}
+.fa-bars{
+  @media (max-width:668px) {
+    font-size: 18px;
+  }
+  @media (max-width:334px) {
+    font-size: 14px;
+  }
+}
+.branch-name{
+  @media (max-width:668px) {
+    font-size: 18px;
+  }
+  @media (max-width:334px) {
+    font-size: 14px;
+  }
+}
+.offcanvas{
+
+  height: fit-content;
+.accordion{
+  .accordion-button{
+    padding-block: 10px;
+    &:not(.collapsed) {
+      color: none;
+      background: transparent;
+      box-shadow: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .accordion-body{
+    padding-top: 10px;
+    padding-bottom: 0;
+    padding-left: 0;
+    .dropdown-item{
+
+      &:hover{
+        color: gray;
+      }
+
+    }
+  }
+}
+}
+
+.btn-close:focus{
+  box-shadow: none;
+}

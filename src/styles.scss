@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    font-family: 'DroidArabicKufiRegular' ;
-
+    font-family: 'DroidArabicKufiRegular' !important ;
 }
 :root{
   --main:#0054a6;
@@ -17,6 +16,11 @@ img, ion-icon, button, a { display: block; }
 .flex-center{
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.flex-between{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .transition{
@@ -37,4 +41,12 @@ img, ion-icon, button, a { display: block; }
   &:hover{
     background: var(--main-hover);
   }
+  .hover{
+    background: #ededed;
+  }
+}
+
+.cursor
+{
+  cursor: pointer;
 }

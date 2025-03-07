@@ -1,0 +1,123 @@
+
+<nav class="navbar navbar-expand-md border-bottom " >
+  <div class="container flex-wrap gap-1">
+    <div class="d-flex justify-content-start gap-3 align-items-center">
+      <!-- Dropdown for Admin -->
+      <div class="dropdown">
+        <a class="btn dropdown-toggle text-capitalize border-0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          admin
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-capitalize" href="#">profile</a></li>
+          <li><a class="dropdown-item text-capitalize" href="#">logout</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Icons -->
+      <div class="icons flex-center gap-1 d-md-flex d-none  ">
+        <button type="button" class="bg-transparent border-0" title="notification">
+          <i class="far fa-bell fa-lg"></i>
+        </button>
+        <button type="button" class="bg-transparent border-0" title="Dark mood">
+          <i class="far fa-moon fa-lg"></i>
+        </button>
+      </div>
+
+      <!-- Dropdown for Language -->
+      <div class="dropdown d-md-block d-none">
+        <a class="btn dropdown-toggle flex-center gap-2 border-secondary" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span>Language</span>
+          <i class="fa-solid fa-language"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-capitalize" href="#">arabic</a></li>
+          <li><a class="dropdown-item text-capitalize" href="#">english</a></li>
+        </ul>
+      </div>
+
+      <!-- Custom Select -->
+      <div class="dropdown  d-md-block d-none">
+        <a class="btn border-secondary fs-6 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          الفروع
+        </a>
+        <ul class="dropdown-menu select text-end">
+          <li><a class="dropdown-item fs-6 disabled "(click)="selectBranch('')">الفروع</a></li>
+          <li><a class="dropdown-item fs-6 cursor " (click)="selectBranch('أنت الأن في الفرع الرئيسي')">الفرع الرئيسي</a></li>
+          <li><a class="dropdown-item fs-6 cursor " (click)="selectBranch('أنت الأن تمتلك كل الفروع')">كل الفروع</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Display Selected Branch -->
+    <div class="flex-center gap-2  ">
+      <h4 class="fw-bold m-0 branch-name ">{{ brancName }}</h4>
+   <div class="">
+    <button class="border-0 bg-transparent d-md-none d-block " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" title="toogle bar">
+      <i class="fas fa-bars fa-xl"></i>
+    </button>
+
+   </div>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-top    transition"   data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <!-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> -->
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body ">
+
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item ">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            الفروع
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show transition" data-bs-parent="#accordionExample">
+          <div class="accordion-body pb-0 ">
+            <ul class=" select text-end d-flex flex-column  ">
+              <li><a class="dropdown-item fs-6 cursor h4 " (click)="selectBranch('أنت الأن في الفرع الرئيسي')">الفرع الرئيسي</a></li>
+              <li><a class="dropdown-item fs-6 cursor h4 " (click)="selectBranch('أنت الأن تمتلك كل الفروع')">كل الفروع</a></li>
+            </ul>
+
+        </div>
+        </div>
+      </div>
+      <div class="accordion-item ">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Language
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse transition" data-bs-parent="#accordionExample">
+          <div class="accordion-body pb-0 ">
+            <ul class=" select text-end d-flex flex-column  ">
+              <li><a class="dropdown-item cursor text-capitalize " > arabic</a></li>
+              <li><a class="dropdown-item cursor text-capitalize " >english</a></li>
+            </ul>
+        </div>
+        </div>
+      </div>
+
+      <div class="">
+        <h2 class="accordion-header ">
+          <div class="icons flex-center gap-2  mt-4">
+            <button type="button" class="bg-transparent border-0" title="notification">
+              <i class="far fa-bell "></i>
+            </button>
+            <button type="button" class="bg-transparent border-0" title="Dark mood">
+              <i class="far fa-moon "></i>
+            </button>
+          </div>
+        </h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+

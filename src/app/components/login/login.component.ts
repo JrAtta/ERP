@@ -22,8 +22,8 @@ export class LoginComponent {
 
   submitLoginForm(){
     if(this.loginForm.valid){
-      console.log(this.loginForm)
-      // this._Router.navigate(['/dashboard']);
+      // console.log(this.loginForm)
+      this._Router.navigate(['/main']);
     }else{
       this.loginForm.markAllAsTouched();
 
