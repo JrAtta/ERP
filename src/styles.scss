@@ -50,3 +50,37 @@ img, ion-icon, button, a { display: block; }
 {
   cursor: pointer;
 }
+.has-scrollbar { padding-bottom: 5px; }
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 12px; /* for vertical scroll */
+  height: 12px; /* for horizontal scroll */
+}
+
+
+.has-scrollbar::-webkit-scrollbar-thumb{  background: red;
+  border: 4px solid #151f2c ;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;}
+.has-scrollbar:hover::-webkit-scrollbar-thumb { background: hsl(0, 0%, 90%); }
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 80%); }
+
+::-webkit-scrollbar { width: 15px; }
+::-webkit-scrollbar-track {
+  background: #151f2c;
+  // border-left: 1px solid #ededed;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 70%);
+  border: 4px solid #151f2c ;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 60%); }
+.modal-backdrop
+{
+  z-index: 0;
+  display: none;
+
+}

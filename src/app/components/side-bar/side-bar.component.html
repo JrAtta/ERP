@@ -1,1 +1,40 @@
+<section class="side-bar ">
+
+<div class="hanger pt-2">
+  <div class="logo flex-center ">
+    <i class="fas fa-bars fa-lg d-block d-lg-none" (click)="toggleSidebar()"></i>
+    <img src="./assets/images/logo.png" width="90" alt="">
+  </div>
+  <div class="hanger-content mt-3 pt-2  px-1 ps-3" [ngClass]="{'show': isSidebarVisible}">
+    <ul class="navbar-nav p-0">
+      <!--  ...,الرئيسية -->
+     @for (item of serviceList; track $index) {
+      <li class="nav-item">
+        <a class="flex-between nav-link" data-bs-toggle="collapse"  [attr.href]="'#collapse' +$index" aria-expanded="false" [attr.aria-controls]="'collapse'+$index" >
+          <div class="d-flex align-items-center gap-2">
+            <i [class]="item.icon"></i>
+            <span class="fs-5">{{item.title}}</span>
+          </div>
+         @if (item.services) { <i class="fas fa-chevron-down"></i>}
+        </a>
+        <div class="collapse" [attr.id]="'collapse'+$index">
+          <ul class="d-flex flex-column pe-4">
+            @for (service of item.services; track $index) {
+              <li class="nav-item">
+                <a class="nav-link pt-0" [routerLink]="getServiceRoute(service)"> {{service}} </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </li>
+     }
+    </ul>
+  </div>
+</div>
+</section>
+
+
+
+
+
 

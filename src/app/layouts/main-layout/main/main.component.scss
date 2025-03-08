@@ -1,0 +1,13 @@
+.nav-bar{
+  width: calc( 100% - 260px );
+  @media (max-width:992px) {
+    width: 100%;
+  }
+}
+.side-bar{
+  width:  260px ;
+  background: #151f2c;
+  @media (max-width:992px) {
+    width: 100%;
+  }
+}

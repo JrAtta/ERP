@@ -1,0 +1,69 @@
+.side-bar {
+  height: 100vh;
+  padding-inline: 5px;
+
+  @media (max-width:992px) {
+    height: 100%;
+  }
+
+  .hanger {
+
+    color: #ffffffb3;
+    height: 100vh;
+    /* ارتفاع ثابت */
+    overflow-y: auto;
+    /* إظهار شريط التمرير العمودي عند الحاجة */
+    padding-right: 10px;
+    /* إضافة بعض المساحة لشريط التمرير */
+    direction: rtl;
+
+    @media (max-width:992px) {
+      overflow: visible;
+      height: fit-content;
+      padding-bottom: 10px;
+    }
+
+    .logo {
+      .fa-bars {
+        color: #fff;
+        cursor: pointer;
+
+
+      }
+
+      @media (max-width:992px) {
+
+        justify-content: space-between;
+      }
+    }
+
+    .hanger-content {
+      @media (max-width:992px) {
+        display: none;
+      }
+
+      &.show {
+        //to show side bar
+        display: block;
+      }
+    }
+
+    .nav-link {
+      padding: 6px 0;
+
+      &[aria-expanded="true"] {
+        color: #fff;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .collapse {
+      a.nav-link {
+        font-size: 16px;
+      }
+    }
+  }
+}

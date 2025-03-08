@@ -13,10 +13,18 @@ export const routes: Routes = [
   ]},
 
   //main Layouts
-  {path:'main' , component:MainComponent , children : [
-  // {path:'' , component:MainComponent , children : [
+  // {path:'main' , component:MainComponent , children : [
+  {path:'' , component:MainComponent , children : [
     // {path:'home', component: } still not exist
     //...
+    // { path: 'branches', component: BranchesComponent },
+    // { path: 'departments', component: DepartmentsComponent },
+    // { path: 'warehouse-items', component: WarehouseItemsComponent },
+    // { path: 'warehouses', component: WarehousesComponent },
+    // { path: 'units', component: UnitsComponent },
+    // { path: 'options', component: OptionsComponent },
+    // { path: 'products', component: ProductsComponent },
+    // ... إضافة المزيد من الـ routes حسب الحاجة
   ]},
 
   //dashboard Layout
