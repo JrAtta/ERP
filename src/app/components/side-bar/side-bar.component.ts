@@ -11,184 +11,87 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class SideBarComponent {
   isSidebarVisible:boolean = false;
-
-  // serviceList:Iservice[] =
-  //  [
-  //   {
-  //     title:'الرئيسية' ,
-  //     icon :'' ,
-  //   },
-  //   {
-  //     title:'اعدادات النظام' ,
-  //     services : [
-  //     'الفروع','الاقسام'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title: 'المخزن',
-  //     services : [
-  //    ' عناصر المخازن','عرض المخازن'
-
-  //     ] ,
-  //     icon :'' ,
-  //   },
-  //   {
-  //     title: 'الاصناف',
-  //     services : [
-  //     'الوحدات','الخيارات','الاصناف'
-  //     ] ,
-  //     icon :'' ,
-  //   },
-  //   {
-  //     title: 'الموردين',
-  //     services : [
-  //    ' فئات الموردين ',' الموردين' ,'كشف حساب الموردين'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title: 'العملاء',
-  //     services : [
-  //     ' كشف حساب العميل' ,'العملاء'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title: 'السندات',
-  //     services : [
-  //   ' سندات القبض' ,' سندات الصرف'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title: 'المشتريات',
-  //     services : [
-  //    ' اضافة فاتورة مشتريات ','فواتير المشتريات'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title:'المبيعات' ,
-  //     services : [
-  //    ' اضافة فاتورة مبيعات ',' فواتير المبيعات'
-  //     ] ,
-  //     icon :'' ,
-  //   },
-  //   {
-  //     title:'الاوردرات' ,
-  //     services : [
-  //     'اضافه اوردر جديد ', 'عرض الاوردرات' ,'حالة الاوردرات'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title: 'الخزينه',
-
-  //     icon :'' ,
-  //   },
-  //   {
-  //     title: 'المصروفات',
-  //     services : [
-  //     'المصاريف' ,' انواع المصروفات'
-  //     ] ,
-  //     icon : '',
-  //   },
-  //   {
-  //     title: 'الايرادات',
-  //     services : [
-  //    ' انواع الايرادات ','الايرادات'
-  //     ] ,
-  //     icon :'' ,
-  //   },
-  //   {
-  //     title: 'المدراء',
-  //     icon :'' ,
-  //   },
-  // ]
-
   serviceList:Iservice[] = [
 
       {
         title: 'الرئيسية',
         icon: 'fas fa-home',
-        routerLink:'/'
+
       },
       {
         title: 'اعدادات النظام',
         services: ['الفروع', 'الاقسام'],
         icon: 'fas fa-cog',
-        routerLink:'/'
+
       },
       {
         title: 'المخزن',
         services: ['عناصر المخازن', 'عرض المخازن'],
         icon: 'fas fa-warehouse',
-        routerLink:'/'
+
       },
       {
         title: 'الاصناف',
         services: ['الوحدات', 'الخيارات', 'الاصناف'],
         icon: 'fas fa-boxes',
-        routerLink:'/'
+
       },
       {
         title: 'الموردين',
         services: ['فئات الموردين', 'الموردين', 'كشف حساب الموردين'],
         icon: 'fas fa-truck',
-        routerLink:'/'
+
       },
       {
         title: 'العملاء',
         services: ['كشف حساب العميل', 'العملاء'],
         icon: 'fas fa-users',
-        routerLink:'/'
+
       },
       {
         title: 'السندات',
         services: ['سندات القبض', 'سندات الصرف'],
         icon: 'fas fa-file-invoice',
-        routerLink:'/'
+
       },
       {
         title: 'المشتريات',
         services: ['اضافة فاتورة مشتريات', 'فواتير المشتريات'],
         icon: 'fas fa-shopping-cart',
-        routerLink:'/'
+
       },
       {
         title: 'المبيعات',
         services: ['اضافة فاتورة مبيعات', 'فواتير المبيعات'],
         icon: 'fas fa-chart-line',
-        routerLink:'/'
+
       },
       {
         title: 'الاوردرات',
         services: ['اضافه اوردر جديد', 'عرض الاوردرات', 'حالة الاوردرات'],
         icon: 'fas fa-clipboard-list',
-        routerLink:'/'
+
       },
       {
         title: 'الخزينه',
         icon: 'fas fa-coins',
-        routerLink:'/'
+
       },
       {
         title: 'المصروفات',
         services: ['المصاريف', 'انواع المصروفات'],
         icon: 'fas fa-money-bill-wave',
-        routerLink:'/'
+
       },
       {
         title: 'الايرادات',
         services: ['انواع الايرادات', 'الايرادات'],
         icon: 'fas fa-hand-holding-usd',
-        routerLink:'/'
+
       },
       {
         title: 'المدراء',
         icon: 'fas fa-user-tie',
-        routerLink:'/',
       }
 
   ]
@@ -197,7 +100,7 @@ export class SideBarComponent {
   toggleSidebar(){
     this.isSidebarVisible = !this.isSidebarVisible;
   }
-  
+
   getServiceRoute(service:string):string{
     switch (service) {
       case 'الفروع':
@@ -227,7 +130,6 @@ export class SideBarComponent {
   title:string ,
   services?:string[],
   icon:string,
-  routerLink:string
  }
 
 

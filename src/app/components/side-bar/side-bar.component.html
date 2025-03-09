@@ -2,7 +2,8 @@
 
 <div class="hanger pt-2">
   <div class="logo flex-center ">
-    <i class="fas fa-bars fa-lg d-block d-lg-none" (click)="toggleSidebar()"></i>
+    <i class="fas fa-bars fa-lg d-block d-lg-none" (click)="toggleSidebar()" [ngClass]="{'fa-x ': isSidebarVisible }"></i>
+    <!-- <i class="fas fa-x fa-lg d-block d-lg-none" (click)="toggleSidebar()"></i> -->
     <img src="./assets/images/logo.png" width="90" alt="">
   </div>
   <div class="hanger-content mt-3 pt-2  px-1 ps-3" [ngClass]="{'show': isSidebarVisible}">

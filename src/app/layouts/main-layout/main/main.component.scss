@@ -1,13 +1,29 @@
-.nav-bar{
-  width: calc( 100% - 260px );
+.main-layout{
+  height: 100vh;
+  position: relative;
   @media (max-width:992px) {
-    width: 100%;
+    position: static;
+
+  }
+  .nav-bar,.page-content{
+    width: calc( 100% - 260px );
+    @media (max-width:992px) {
+      width: 100%;
+    }
+  }
+  .side-bar{
+    width:  260px ;
+    background: #151f2c;
+    @media (max-width:992px) {
+      width: 100%;
+    }
   }
 }
-.side-bar{
-  width:  260px ;
-  background: #151f2c;
+.page-content{
+  position: absolute;
+  left: 0px;
+  top: 60px;
   @media (max-width:992px) {
-    width: 100%;
+    position: static;
   }
 }

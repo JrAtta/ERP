@@ -17,7 +17,9 @@ form{
   border: 1px solid #0000003d;
   border-radius: 4px;
   padding: 40px;
-
+  @media (max-width:220px) {
+    width: 100%;
+  }
   input.pass{
     direction: rtl;
   }

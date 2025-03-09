@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 body{
     font-family: 'DroidArabicKufiRegular' !important ;
 }
@@ -68,12 +69,12 @@ img, ion-icon, button, a { display: block; }
 
 ::-webkit-scrollbar { width: 15px; }
 ::-webkit-scrollbar-track {
-  background: #151f2c;
+  background: #fff;
   // border-left: 1px solid #ededed;
 }
 ::-webkit-scrollbar-thumb {
   background: hsl(0, 0%, 70%);
-  border: 4px solid #151f2c ;
+  border: 4px solid #fff ;
   -webkit-border-radius: 10px;
           border-radius: 10px;
 }

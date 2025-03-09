@@ -3,6 +3,7 @@ import { AuthComponent } from './layouts/auth-layout/auth/auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './layouts/main-layout/main/main.component';
 import { DashboardComponent } from './layouts/dashboard-layout/dashboard/dashboard.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -15,8 +16,8 @@ export const routes: Routes = [
   //main Layouts
   // {path:'main' , component:MainComponent , children : [
   {path:'' , component:MainComponent , children : [
-    // {path:'home', component: } still not exist
-    //...
+    {path:'home', component:HomeComponent }
+    //... still not exist
     // { path: 'branches', component: BranchesComponent },
     // { path: 'departments', component: DepartmentsComponent },
     // { path: 'warehouse-items', component: WarehouseItemsComponent },
