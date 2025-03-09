@@ -1,0 +1,139 @@
+<div class="container-fluid my-3  ">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-body">
+      <form [formGroup]="branchForm" (ngSubmit)="submitBranchForm()">
+        <h2 class=" fw-bold mb-4">إضافة فرع</h2>
+        <div class="row">
+
+          <!-- nameAr -->
+          <div class="mb-3 col-sm-5 col-12">
+            <label for="nameAr" class="form-label ">الإسم</label>
+            <input type="text" formControlName="nameAr" class="form-control" id="nameAr" placeholder="اسمي">
+
+            <!-- validation nameAr -->
+            @if (branchForm.get('nameAr')?.invalid && branchForm.get('nameAr')?.touched) {
+            @if (branchForm.get('nameAr')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (branchForm.get('nameAr')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
+            }
+            }
+          </div>
+
+          <!--  nameEn -->
+          <div class="mb-3 col-sm-5 col-12">
+            <label for="nameEn" class="form-label ">الاسم (بالإنجليزية)</label>
+            <input type="text" formControlName="nameEn" class="form-control" id="nameEn" placeholder="My name">
+            <!-- validation nameEn-->
+            @if (branchForm.get('nameEn')?.invalid && branchForm.get('nameEn')?.touched) {
+            @if (branchForm.get('nameEn')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (branchForm.get('nameEn')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالإنجليزية فقط.</small>
+            }
+
+            }
+          </div>
+
+          <!-- description -->
+          <div class="mb-3 col-sm-4 col-12">
+            <label for="description" class="form-label ">الوصف</label>
+            <textarea class="form-control" formControlName="description" id="description" rows="1"></textarea>
+            <!-- validation description-->
+            @if (branchForm.get('description')?.invalid && branchForm.get('description')?.touched) {
+            @if (branchForm.get('description')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            }
+          </div>
+        </div>
+
+        <div class="p-3 d-flex justify-content-end">
+          <button class="btn btn-primary  p-2 px-5 " type="submit">
+            حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class=" data-table border rounded  " dir="rtl">
+
+    <h3 class=" fs-5 p-3 card-header  ">
+      الفروع
+    </h3>
+
+    <div class="card-body pb-3">
+      <div class="flex-between">
+        still things
+      </div>
+      <table class="table table-hover text-nowrap  ">
+        <thead>
+          <tr>
+            <th colspan="1" class="border">#</th>
+            <th colspan="1" class="border">الاسم</th>
+            <th colspan="1" class="border">الاسم (بالإنجليزية)</th>
+            <th colspan="1" class="border">الوصف</th>
+            <th colspan="1" class="text-uppercase border">main status</th>
+            <th colspan="1" class="border">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="h-100">
+          <tr class="h-100">
+            <th>1</th>
+            <td>مدينة نصر</td>
+            <td class="text-capitalize">nasr city</td>
+            <td class="small ">Lorem ipsum dasfasfasfasfasfasfasasasasasasasasasasolor sit amet consectetur, adipisicing elit. Impedit, cupiditate?</td>
+            <td>
+              <div class="form-check form-switch  flex-center justify-content-start">
+                <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              </div>
+            </td>
+            <td  class="  d-flex justify-content-start  gap-3">
+              <div class="btn btn-primary flex-center gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>تعديل</span>
+              </div>
+              <div class="btn btn-danger flex-center gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </div>
+          </tr>
+          <tr class="h-100">
+            <th>1</th>
+            <td>مدينة نصر</td>
+            <td class="text-capitalize">nasr city</td>
+            <td class="small ">Lorem ipsum dasfasfasfasfasfasfasasasasasasasasasasolor sit amet consectetur, adipisicing elit. Impedit, cupiditate?</td>
+            <td>
+              <div class="form-check form-switch  flex-center justify-content-start">
+                <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              </div>
+            </td>
+            <td  class="  d-flex justify-content-start  gap-3">
+              <div class="btn btn-primary flex-center gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>تعديل</span>
+              </div>
+              <div class="btn btn-danger flex-center gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </div>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="flex-between">
+      still things
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+</div>

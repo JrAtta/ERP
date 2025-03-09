@@ -8,27 +8,36 @@
   </div>
   <div class="hanger-content mt-3 pt-2  px-1 ps-3" [ngClass]="{'show': isSidebarVisible}">
     <ul class="navbar-nav p-0">
-      <!--  ...,الرئيسية -->
      @for (item of serviceList; track $index) {
       <li class="nav-item">
-        <a class="flex-between nav-link" data-bs-toggle="collapse"  [attr.href]="'#collapse' +$index" aria-expanded="false" [attr.aria-controls]="'collapse'+$index" >
+        <!-- العنوان الرئيسي -->
+        <a class="flex-between nav-link"
+           (click)="item.services ? toggleCollapse($index) : null"
+           [routerLink]="item.services ? null : getTitleRoute(item.title)"
+           [ngClass]="{ 'active-nav-link': isCollapsed[$index] }"
+           >
           <div class="d-flex align-items-center gap-2">
             <i [class]="item.icon"></i>
-            <span class="fs-5">{{item.title}}</span>
+            <span class="fs-5">{{ item.title }}</span>
           </div>
-         @if (item.services) { <i class="fas fa-chevron-down"></i>}
+          @if (item.services) { <i class="fas fa-chevron-down"></i> }
         </a>
-        <div class="collapse" [attr.id]="'collapse'+$index">
-          <ul class="d-flex flex-column pe-4">
-            @for (service of item.services; track $index) {
-              <li class="nav-item">
-                <a class="nav-link pt-0" [routerLink]="getServiceRoute(service)"> {{service}} </a>
-              </li>
-            }
-          </ul>
-        </div>
+
+        <!-- الخدمات الفرعية -->
+        @if (item.services) {
+          <div class="collapse " [class.show]="isCollapsed[$index]">
+            <ul class="d-flex flex-column pe-4">
+              @for (service of item.services; track $index) {
+                <li class="nav-item">
+                  <a class="nav-link pt-0" [routerLink]="getServiceRoute(service)"> {{ service }} </a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
       </li>
-     }
+    }
+
     </ul>
   </div>
 </div>

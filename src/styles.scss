@@ -31,6 +31,7 @@ img, ion-icon, button, a { display: block; }
 
   &:focus{
     box-shadow: none;
+    border-color: #151F2C;
   }
 }
 .btn-main{

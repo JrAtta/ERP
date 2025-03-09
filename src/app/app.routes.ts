@@ -4,21 +4,24 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './layouts/main-layout/main/main.component';
 import { DashboardComponent } from './layouts/dashboard-layout/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
+import { BranchesComponent } from './components/branches/branches.component';
 
 export const routes: Routes = [
    //Auth Layouts
   // {path:'' , component:AuthComponent , children:[
   {path:'auth' , component:AuthComponent , children:[
+    {path:'' , redirectTo:'login', pathMatch:'full'},
     {path:'login' , component:LoginComponent},
     // {path:'register' , component:}, still not exist
   ]},
 
   //main Layouts
-  // {path:'main' , component:MainComponent , children : [
-  {path:'' , component:MainComponent , children : [
-    {path:'home', component:HomeComponent }
+  {path:'main' , component:MainComponent , children : [
+  // {path:'' , component:MainComponent , children : [
+    {path:'', redirectTo : 'home' , pathMatch:'full' },
+    {path:'home', component:HomeComponent },
+    { path: 'branches', component: BranchesComponent },
     //... still not exist
-    // { path: 'branches', component: BranchesComponent },
     // { path: 'departments', component: DepartmentsComponent },
     // { path: 'warehouse-items', component: WarehouseItemsComponent },
     // { path: 'warehouses', component: WarehousesComponent },

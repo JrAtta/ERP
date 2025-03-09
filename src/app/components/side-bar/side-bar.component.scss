@@ -51,16 +51,20 @@
     .nav-link {
       padding: 6px 0;
 
-      &[aria-expanded="true"] {
-        color: #fff;
-      }
 
       span {
         font-weight: bold;
       }
     }
+    .active-nav-link {
+      color: white !important;
+    }
 
     .collapse {
+      transition: all 0.3s ease;
+      .collapse.show {
+        display: block;
+      }
       a.nav-link {
         font-size: 16px;
       }

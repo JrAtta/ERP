@@ -1,5 +1,5 @@
 import { NgClass, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -10,118 +10,110 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './side-bar.component.scss'
 })
 export class SideBarComponent {
+
   isSidebarVisible:boolean = false;
-  serviceList:Iservice[] = [
 
-      {
-        title: 'الرئيسية',
-        icon: 'fas fa-home',
+    // تتبع حالة العنصر مفتوح ولا مغلق
+    isCollapsed: { [key: number]: boolean } = {};
 
-      },
-      {
-        title: 'اعدادات النظام',
-        services: ['الفروع', 'الاقسام'],
-        icon: 'fas fa-cog',
-
-      },
-      {
-        title: 'المخزن',
-        services: ['عناصر المخازن', 'عرض المخازن'],
-        icon: 'fas fa-warehouse',
-
-      },
-      {
-        title: 'الاصناف',
-        services: ['الوحدات', 'الخيارات', 'الاصناف'],
-        icon: 'fas fa-boxes',
-
-      },
-      {
-        title: 'الموردين',
-        services: ['فئات الموردين', 'الموردين', 'كشف حساب الموردين'],
-        icon: 'fas fa-truck',
-
-      },
-      {
-        title: 'العملاء',
-        services: ['كشف حساب العميل', 'العملاء'],
-        icon: 'fas fa-users',
-
-      },
-      {
-        title: 'السندات',
-        services: ['سندات القبض', 'سندات الصرف'],
-        icon: 'fas fa-file-invoice',
-
-      },
-      {
-        title: 'المشتريات',
-        services: ['اضافة فاتورة مشتريات', 'فواتير المشتريات'],
-        icon: 'fas fa-shopping-cart',
-
-      },
-      {
-        title: 'المبيعات',
-        services: ['اضافة فاتورة مبيعات', 'فواتير المبيعات'],
-        icon: 'fas fa-chart-line',
-
-      },
-      {
-        title: 'الاوردرات',
-        services: ['اضافه اوردر جديد', 'عرض الاوردرات', 'حالة الاوردرات'],
-        icon: 'fas fa-clipboard-list',
-
-      },
-      {
-        title: 'الخزينه',
-        icon: 'fas fa-coins',
-
-      },
-      {
-        title: 'المصروفات',
-        services: ['المصاريف', 'انواع المصروفات'],
-        icon: 'fas fa-money-bill-wave',
-
-      },
-      {
-        title: 'الايرادات',
-        services: ['انواع الايرادات', 'الايرادات'],
-        icon: 'fas fa-hand-holding-usd',
-
-      },
-      {
-        title: 'المدراء',
-        icon: 'fas fa-user-tie',
-      }
-
-  ]
-
-  //to show side-bar
+  serviceList: Iservice[] = [
+    { title: 'الرئيسية', icon: 'fas fa-home' },
+    { title: 'اعدادات النظام', services: ['الفروع', 'الاقسام'], icon: 'fas fa-cog' },
+    { title: 'المخزن', services: ['عناصر المخازن', 'عرض المخازن'], icon: 'fas fa-warehouse' },
+    { title: 'الاصناف', services: ['الوحدات', 'الخيارات', 'الاصناف'], icon: 'fas fa-boxes' },
+    { title: 'الموردين', services: ['فئات الموردين', 'الموردين', 'كشف حساب الموردين'], icon: 'fas fa-truck' },
+    { title: 'العملاء', services: ['كشف حساب العميل', 'العملاء'], icon: 'fas fa-users' },
+    { title: 'السندات', services: ['سندات القبض', 'سندات الصرف'], icon: 'fas fa-file-invoice' },
+    { title: 'المشتريات', services: ['اضافة فاتورة مشتريات', 'فواتير المشتريات'], icon: 'fas fa-shopping-cart' },
+    { title: 'المبيعات', services: ['اضافة فاتورة مبيعات', 'فواتير المبيعات'], icon: 'fas fa-chart-line' },
+    { title: 'الاوردرات', services: ['اضافه اوردر جديد', 'عرض الاوردرات', 'حالة الاوردرات'], icon: 'fas fa-clipboard-list' },
+    { title: 'الخزينه', icon: 'fas fa-coins' },
+    { title: 'المصروفات', services: ['المصاريف', 'انواع المصروفات'], icon: 'fas fa-money-bill-wave' },
+    { title: 'الايرادات', services: ['انواع الايرادات', 'الايرادات'], icon: 'fas fa-hand-holding-usd' },
+    { title: 'المدراء', icon: 'fas fa-user-tie' }
+  ];
+  // //to show side-bar
   toggleSidebar(){
     this.isSidebarVisible = !this.isSidebarVisible;
   }
 
-  getServiceRoute(service:string):string{
+  // دالة لإرجاع المسار من العنوان الرئيسي
+  getTitleRoute(title: string): string {
+    switch (title) {
+      case 'الرئيسية':
+        return '/main/home';
+      case 'الخزينه':
+        return '/main/treasury';
+      case 'المدراء':
+        return '/main/managers';
+      default:
+        return ''; // إذا كان هناك services، لن يكون هناك route للعنوان الرئيسي
+    }
+  }
+
+  // دالة لإرجاع المسار من الخدمة الفرعية
+  getServiceRoute(service: string): string {
     switch (service) {
       case 'الفروع':
-        return '/branches';
+        return '/main/branches';
       case 'الاقسام':
-        return '/departments';
+        return '/main/departments';
       case 'عناصر المخازن':
-        return '/warehouse-items';
+        return '/main/items';
       case 'عرض المخازن':
-        return '/warehouses';
+        return '/main/view';
       case 'الوحدات':
-        return '/units';
+        return '/main/units';
       case 'الخيارات':
-        return '/options';
+        return '/main/options';
       case 'الاصناف':
-        return '/products';
-
-      // ... وهكذا مع الباقي
+        return '/main/products';
+      case 'فئات الموردين':
+        return '/main/categories';
+      case 'الموردين':
+        return '/main/list';
+      case 'كشف حساب الموردين':
+        return '/main/account';
+      case 'كشف حساب العميل':
+        return '/main/account';
+      case 'العملاء':
+        return '/main/list';
+      case 'سندات القبض':
+        return '/main/receipt';
+      case 'سندات الصرف':
+        return '/main/payment';
+      case 'اضافة فاتورة مشتريات':
+        return '/main/add';
+      case 'فواتير المشتريات':
+        return '/main/list';
+      case 'اضافة فاتورة مبيعات':
+        return '/main/add';
+      case 'فواتير المبيعات':
+        return '/main/list';
+      case 'اضافه اوردر جديد':
+        return '/main/add';
+      case 'عرض الاوردرات':
+        return '/main/list';
+      case 'حالة الاوردرات':
+        return '/main/status';
+      case 'المصاريف':
+        return '/main/list';
+      case 'انواع المصروفات':
+        return '/main/types';
+      case 'انواع الايرادات':
+        return '/main/types';
+      case 'الايرادات':
+        return '/main/list';
       default:
         return '/';
     }
+  }
+
+
+  // دالة لتبديل حالة القائمة المنسدلة
+  toggleCollapse(index: number) {
+    this.isCollapsed[index] = !this.isCollapsed[index];
+
   }
 }
 
