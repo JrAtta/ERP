@@ -14,7 +14,7 @@
             <label for="inputState" class="form-label">المخزن</label>
             <select id="inputState" class="form-select overflow-hidden" >
               <option selected disabled >اختر المخزن </option>
-              <option >{{investoryName}}</option>
+              <option >{{inventoryName}}</option>
             </select>
           </div>
 
@@ -60,7 +60,7 @@
         </thead>
         <tbody class="text-center">
           <tr >
-         @if (investoryName === null) {
+         @if (inventoryName === null) {
           <td colspan="4" class="empty fs-5">
             جدول خالي
           </td>
@@ -72,7 +72,7 @@
             empty
           </td>
           <td>
-            {{investoryName}}
+            {{inventoryName}}
           </td>
           <td>
             empty

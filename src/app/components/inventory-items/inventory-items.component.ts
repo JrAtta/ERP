@@ -9,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryItemsComponent implements OnInit{
 
-  investoryName:string = '';
+  inventoryName:string = '';
 
 ngOnInit(): void {
  if(typeof localStorage !== 'undefined'){
-  this.investoryName = localStorage.getItem('investory name')!;
+  this.inventoryName = localStorage.getItem('inventory name')!;
  }
-  console.log(this.investoryName)
+  console.log(this.inventoryName)
 }
 
 }

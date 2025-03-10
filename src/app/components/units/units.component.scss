@@ -23,24 +23,15 @@
     width: 100%;
     overflow-x: auto;
 
-    .form-select{
-
-      &:focus{
-        box-shadow: none;
-        border-color: #787878;
-      }
-    }
-
+  }
+  thead th{
+    background: #f6f8fb;
+  }
+  tbody td {
+    height:60px;
   }
   }
 
 }
 
-.form-select{
 
-  &:focus{
-    box-shadow: none;
-    border-color: #787878;
-  }
-
-}
