@@ -1,8 +1,10 @@
 .main-layout{
-  height: 100vh;
+  height: 100%;
   position: relative;
+
   @media (max-width:992px) {
     position: static;
+    margin-bottom: 25px;
 
   }
   .nav-bar,.page-content{

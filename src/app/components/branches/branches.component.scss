@@ -1,6 +1,5 @@
 .container-fluid{
   background: #F6F8FB;
-
   .card{
 
     .form-label{
@@ -21,6 +20,14 @@
   .card-body{
     width: 100%;
     overflow-x: auto;
+
+    .form-select{
+
+      &:focus{
+        box-shadow: none;
+        border-color: #787878;
+      }
+    }
   }
 
 }
