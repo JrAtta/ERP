@@ -1,0 +1,69 @@
+<div class="container-fluid mt-5  mb-5  ">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header  px-4 py-3  bg-white">
+      <h5 class=" fs-4 mb-0 ">
+        اضافة خيار جديد
+      </h5>
+
+    </div>
+    <div class="card-body pt-4 px-0 pb-0">
+      <form [formGroup]="optionsForm" (ngSubmit)="submitOptionsForm()">
+        <div class="row px-4">
+          <!-- nameAr -->
+          <div class="mb-3 col-sm-6 col-12">
+            <label for="nameAr" class="form-label  " > الاسم باللغة العربية </label>
+            <input type="text" formControlName="nameAr" class="form-control" id="nameAr" placeholder="اسم الخَيار ">
+
+            <!-- validation nameAr -->
+            @if (optionsForm.get('nameAr')?.invalid && optionsForm.get('nameAr')?.touched) {
+            @if (optionsForm.get('nameAr')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (optionsForm.get('nameAr')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
+            }
+            }
+          </div>
+
+          <div class="table-responsive my-3">
+
+            <h5>القيمه</h5>
+            <table class="table  mb-0  text-nowrap transition  ">
+              <thead class="small">
+                <tr class="">
+                  <th colspan="1" class="border text-secondary small">#</th>
+                  <th colspan="1" class="border text-secondary small ">الإسم</th>
+                  <th colspan="1" class="border text-secondary small text-uppercase">الاجراءات</th>
+                </tr>
+              </thead>
+              <tbody class="">
+
+                <tr class="">
+                  <th class="">1</th>
+                  <td class="fs-5 ">
+                    <input type="text" class="form-control" title="form-control">
+                  </td>
+                  <td>
+                    <button class="transition btn btn-primary px-3" type="button"  title="form-control">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+
+        </div>
+
+        <div class="p-3 d-flex justify-content-end card-footer">
+          <button class="btn btn-primary  p-2 px-5 " type="submit">
+            حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

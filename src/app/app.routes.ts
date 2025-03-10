@@ -9,6 +9,7 @@ import { DepartmentsComponent } from './components/departments/departments.compo
 import { InventoriesComponent } from './components/inventories/inventories.component';
 import { InventoryItemsComponent } from './components/inventory-items/inventory-items.component';
 import { UnitsComponent } from './components/units/units.component';
+import { OptionsComponent } from './components/options/options.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -29,9 +30,9 @@ export const routes: Routes = [
     { path: 'inventories/create', component: InventoriesComponent,},
       {path: 'inventories/items', component:InventoryItemsComponent},
       { path: 'units', component: UnitsComponent },
+      { path: 'options/create', component: OptionsComponent },
     //... still not exist
     // { path: 'warehouses', component: WarehousesComponent },
-    // { path: 'options', component: OptionsComponent },
     // { path: 'products', component: ProductsComponent },
     // ... إضافة المزيد من الـ routes حسب الحاجة
   ]},

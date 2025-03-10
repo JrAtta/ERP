@@ -65,7 +65,7 @@ export class SideBarComponent {
       case 'الوحدات':
         return '/main/units';
       case 'الخيارات':
-        return '/main/options';
+        return '/main/options/create';
       case 'الاصناف':
         return '/main/products';
       case 'فئات الموردين':
