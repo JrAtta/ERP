@@ -5,6 +5,8 @@ import { MainComponent } from './layouts/main-layout/main/main.component';
 import { DashboardComponent } from './layouts/dashboard-layout/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { BranchesComponent } from './components/branches/branches.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { InventoriesComponent } from './components/inventories/inventories.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -21,9 +23,11 @@ export const routes: Routes = [
     {path:'', redirectTo : 'home' , pathMatch:'full' },
     {path:'home', component:HomeComponent },
     { path: 'branches', component: BranchesComponent },
+    { path: 'departments', component: DepartmentsComponent },
+    { path: 'inventories', component: InventoriesComponent, children:[
+      // {path: 'items', component:InventoriesItemsComponent}
+    ] },
     //... still not exist
-    // { path: 'departments', component: DepartmentsComponent },
-    // { path: 'warehouse-items', component: WarehouseItemsComponent },
     // { path: 'warehouses', component: WarehousesComponent },
     // { path: 'units', component: UnitsComponent },
     // { path: 'options', component: OptionsComponent },

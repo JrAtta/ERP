@@ -9,7 +9,7 @@
   <div class="hanger-content mt-3 pt-2  px-1 ps-3" [ngClass]="{'show': isSidebarVisible}">
     <ul class="navbar-nav p-0">
      @for (item of serviceList; track $index) {
-      <li class="nav-item">
+      <li class="nav-item cursor">
         <!-- العنوان الرئيسي -->
         <a class="flex-between nav-link"
            (click)="item.services ? toggleCollapse($index) : null"

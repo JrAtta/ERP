@@ -1,0 +1,133 @@
+<div class="container-fluid mt-3  mb-5  ">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header border-0 p-4">
+      <h2 class=" fw-bold ">إضافة مخزن
+      </h2>
+    </div>
+    <div class="card-body p-0 ">
+      <form [formGroup]="inventoriesForm" (ngSubmit)="submitInventoriesForm()" class="">
+
+        <div class="row px-4">
+
+          <!-- nameAr -->
+          <div class="mb-3 col-sm-10 col-12">
+            <label for="nameAr" class="form-label "> الإسم (عربي)</label>
+            <input type="text" formControlName="nameAr" class="form-control" id="nameAr" placeholder="اسم المخزن">
+
+            <!-- validation nameAr -->
+            @if (inventoriesForm.get('nameAr')?.invalid && inventoriesForm.get('nameAr')?.touched) {
+            @if (inventoriesForm.get('nameAr')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (inventoriesForm.get('nameAr')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
+            }
+            }
+          </div>
+
+
+        </div>
+        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+          <button class="btn btn-primary  p-2   " type="submit" style="width: 18%;">
+            حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class=" data-table border rounded card " dir="rtl">
+
+    <h3 class=" fs-6 p-4 card-header  ">
+      المخازن
+    </h3>
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary small">#</th>
+            <th colspan="1" class="border text-secondary small ">الاسم</th>
+            <th colspan="1" class="border text-secondary small ">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="">
+            <th class="">1</th>
+            <td class="fs-5 ">مخزن 1</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="">
+            <th class="">1</th>
+            <td class="fs-5 ">مخزن 1</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 1 الي 4 من كل 4 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+</div>
+
