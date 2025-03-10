@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BranchesComponent } from './components/branches/branches.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { InventoriesComponent } from './components/inventories/inventories.component';
+import { InventoryItemsComponent } from './components/inventory-items/inventory-items.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -24,9 +25,8 @@ export const routes: Routes = [
     {path:'home', component:HomeComponent },
     { path: 'branches', component: BranchesComponent },
     { path: 'departments', component: DepartmentsComponent },
-    { path: 'inventories', component: InventoriesComponent, children:[
-      // {path: 'items', component:InventoriesItemsComponent}
-    ] },
+    { path: 'inventories/create', component: InventoriesComponent,},
+      {path: 'inventories/items', component:InventoryItemsComponent}
     //... still not exist
     // { path: 'warehouses', component: WarehousesComponent },
     // { path: 'units', component: UnitsComponent },

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-inventories',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule , ],
   templateUrl: './inventories.component.html',
   styleUrl: './inventories.component.scss'
 })
@@ -23,6 +24,7 @@ export class InventoriesComponent {
       if(this.inventoriesForm.valid){
         console.log(this.inventoriesForm.value)
         this.nameAr = this.inventoriesForm.value.nameAr;
+        localStorage.setItem('investory name' , this.nameAr);
       }else{
         this.inventoriesForm.markAllAsTouched();
       }

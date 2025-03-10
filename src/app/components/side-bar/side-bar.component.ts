@@ -19,7 +19,7 @@ export class SideBarComponent {
   serviceList: Iservice[] = [
     { title: 'الرئيسية', icon: 'fas fa-home' },
     { title: 'اعدادات النظام', services: ['الفروع', 'الاقسام'], icon: 'fas fa-cog' },
-    { title: 'المخزن', services: ['عناصر المخازن', 'عرض المخازن'], icon: 'fas fa-warehouse' },
+    { title: 'المخزن', services: [ 'عرض المخازن','عناصر المخازن',], icon: 'fas fa-warehouse' },
     { title: 'الاصناف', services: ['الوحدات', 'الخيارات', 'الاصناف'], icon: 'fas fa-boxes' },
     { title: 'الموردين', services: ['فئات الموردين', 'الموردين', 'كشف حساب الموردين'], icon: 'fas fa-truck' },
     { title: 'العملاء', services: ['كشف حساب العميل', 'العملاء'], icon: 'fas fa-users' },
@@ -59,7 +59,7 @@ export class SideBarComponent {
       case 'الاقسام':
         return '/main/departments';
         case 'عرض المخازن':
-          return '/main/inventories';
+          return '/main/inventories/create';
           case 'عناصر المخازن':
             return '/main/inventories/items';
       case 'الوحدات':

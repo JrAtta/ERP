@@ -1,0 +1,49 @@
+.container-fluid{
+  background: #F6F8FB;
+  .card{
+
+   form .form-label{
+      white-space: nowrap;
+      font-size: 18px;
+      @media (max-width:668px) {
+        font-size: 15px;
+
+      }
+      &::after{
+        content: '*';
+        color: rgb(218, 7, 7);
+        padding-right: 3px;
+      }
+
+    }
+  }
+  .data-table{
+    margin-top: 50px;
+  .card-body{
+    width: 100%;
+    overflow-x: auto;
+
+    .form-select{
+
+      &:focus{
+        box-shadow: none;
+        border-color: #787878;
+      }
+    }
+
+  }
+  }
+
+}
+
+.form-select{
+
+  &:focus{
+    box-shadow: none;
+    border-color: #787878;
+  }
+
+  option{
+
+  }
+}

@@ -1,0 +1,115 @@
+<div class="container-fluid pt-3 mb-5  ">
+
+    <h3 class="fw-bold text-end p-2 h4">عرض المخازن</h3>
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header p-4 pb-0  bg-white">
+      <h4 class=" h5 ">المخازن
+      </h4>
+    </div>
+    <div class="card-body p-0 pt-4">
+
+        <div class="row px-4">
+
+          <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="inputState" class="form-label">المخزن</label>
+            <select id="inputState" class="form-select overflow-hidden" >
+              <option selected disabled >اختر المخزن </option>
+              <option >{{investoryName}}</option>
+            </select>
+          </div>
+
+
+        </div>
+        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+          <button class="btn btn-primary  p-2 px-4  " type="submit" >
+            بحث
+          </button>
+        </div>
+    </div>
+  </div>
+
+  <div class=" data-table border rounded card m " dir="rtl">
+
+
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary ">#</th>
+            <th colspan="1" class="border text-secondary  ">اسم الصنف</th>
+            <th colspan="1" class="border text-secondary  ">المخزن</th>
+            <th colspan="1" class="border text-secondary  ">الكميه الموجوده بالمخزن</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr >
+         @if (investoryName === null) {
+          <td colspan="4" class="empty fs-5">
+            جدول خالي
+          </td>
+         }@else {
+          <td>
+            1
+          </td>
+          <td>
+            empty
+          </td>
+          <td>
+            {{investoryName}}
+          </td>
+          <td>
+            empty
+          </td>
+         }
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 h5 ">
+          لا يوجد سجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>
+

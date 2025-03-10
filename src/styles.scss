@@ -52,7 +52,8 @@ img, ion-icon, button, a { display: block; }
 {
   cursor: pointer;
 }
-.has-scrollbar { padding-bottom: 5px; }
+.has-scrollbar { padding-bottom: 5px;
+}
 
 .has-scrollbar::-webkit-scrollbar {
   width: 12px; /* for vertical scroll */
