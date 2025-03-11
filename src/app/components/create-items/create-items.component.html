@@ -1,1 +1,251 @@
-<p>create-items works!</p>
+<div class="container-fluid  py-5 ">
+  <form [formGroup]="itemsForm" (ngSubmit)="submitItemsForm()">
+  <div class="row g-3">
+
+      <!-- section on left -->
+    <div class="col-lg-3 col-5 h-100 ">
+
+      <!-- sec1 on left -->
+      <div class="card">
+        <div class="card-header mb-2  text-end fs-5 py-3">
+          تفاصيل الصنف
+        </div>
+        <div class="card-body" dir="rtl">
+          <div class="mb-3 ">
+            <label for="inputState" class="form-label">القسم</label>
+            <select id="inputState" class="form-select overflow-hidden" >
+              <option selected disabled ></option>
+              <option >قسم 1</option>
+            </select>
+          </div>
+          <div class="mb-3 ">
+            <label for="inputState1" class="form-label">المورد</label>
+            <select id="inputState1" class="form-select overflow-hidden" >
+              <option selected disabled ></option>
+              <option >قسم 1</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec2 on left -->
+      @if (itemsForm.get('selectInp')?.value !== 'منتج متغير') {
+        <div class="card mt-3">
+          <div class="card-header mb-2  text-end fs-5 py-3">
+            تفاصيل الاسعار
+          </div>
+          <div class="card-body" dir="rtl">
+
+              <!-- purchasePrice -->
+              <div class="mb-3 ">
+                <label for="purchasePrice" class="form-label">سعر الشراء </label>
+                <input type="number" formControlName="purchasePrice" id="purchasePrice" class="form-control" >
+                @if (itemsForm.get('purchasePrice')?.invalid && itemsForm.get('purchasePrice')?.touched) {
+                  @if (itemsForm.get('purchasePrice')?.errors?.['required']) {
+                  <small class="text-danger">هذا الحقل مطلوب.</small>
+                  }
+                  }
+              </div>
+
+              <!-- sellingPrice -->
+              <div class="mb-3 ">
+                <label for="sellingPrice" class="form-label">سعر البيع </label>
+                <input type="number" formControlName="sellingPrice" id="sellingPrice" class="form-control" >
+                @if (itemsForm.get('sellingPrice')?.invalid && itemsForm.get('sellingPrice')?.touched) {
+                  @if (itemsForm.get('sellingPrice')?.errors?.['required']) {
+                  <small class="text-danger">هذا الحقل مطلوب.</small>
+                  }
+                  }
+              </div>
+
+              <!-- wholesalePrice -->
+              <div class="mb-3 ">
+                <label for="wholesalePrice" class="form-label">سعر الجملة </label>
+                <input type="number" formControlName="wholesalePrice" id="wholesalePrice" class="form-control" >
+                @if (itemsForm.get('wholesalePrice')?.invalid && itemsForm.get('wholesalePrice')?.touched) {
+                  @if (itemsForm.get('wholesalePrice')?.errors?.['required']) {
+                  <small class="text-danger">هذا الحقل مطلوب.</small>
+                  }
+                  }
+              </div>
+
+              <!-- semiWholesalePrice -->
+              <div class="mb-3 ">
+                <label for="semiWholesalePrice" class="form-label">سعر النصف جملة </label>
+                <input type="number" formControlName="semiWholesalePrice" id="semiWholesalePrice" class="form-control" >
+                @if (itemsForm.get('semiWholesalePrice')?.invalid && itemsForm.get('semiWholesalePrice')?.touched) {
+                  @if (itemsForm.get('semiWholesalePrice')?.errors?.['required']) {
+                  <small class="text-danger">هذا الحقل مطلوب.</small>
+                  }
+                  }
+              </div>
+
+          </div>
+        </div>
+      }
+    </div>
+
+      <!-- section on right -->
+    <div class="col-lg-9 col-7 flex-1">
+
+      <!-- sec1 on right -->
+
+      <div class="card  pb-3">
+        <div class="card-header mb-2  text-end fs-5 py-3">
+          تفاصيل الصنف
+        </div>
+        <div class="card-body" dir="rtl">
+
+          <div class="row">
+             <!-- name -->
+             <div class="mb-3 col-md-6 col-12 ">
+              <label for="name" class="form-label">الاسم  </label>
+              <input type="text" formControlName="name" id="name" class="form-control" >
+              @if (itemsForm.get('name')?.invalid && itemsForm.get('name')?.touched) {
+                @if (itemsForm.get('name')?.errors?.['required']) {
+                  <small class="text-danger ">هذا الحقل مطلوب.</small>
+                }
+              }
+            </div>
+
+             <!-- codeItem -->
+             <div class="mb-3  col-md-6 col-12">
+              <label for="codeItem" class="form-label">كود الصنف</label>
+              <input type="text" formControlName="codeItem" id="codeItem" class="form-control " >
+              @if (itemsForm.get('codeItem')?.invalid && itemsForm.get('codeItem')?.touched) {
+                @if (itemsForm.get('name')?.errors?.['required']) {
+                <small class="text-danger">هذا الحقل مطلوب.</small>
+                }
+                }
+            </div>
+
+
+             <!-- description -->
+             <div class="  col-12 my-3">
+              <label for="description" class="form-label">الوصف</label>
+             <textarea formControlName="description" id="description" class="form-control "></textarea>
+            </div>
+
+                <!-- order -->
+                <div class="mb-3  col-md-6 col-12">
+                  <label for="order" class="form-label">حد الطلب </label>
+                  <input type="number" formControlName="order" id="order" class="form-control " >
+                  @if (itemsForm.get('order')?.invalid && itemsForm.get('order')?.touched) {
+                    @if (itemsForm.get('name')?.errors?.['required']) {
+                    <small class="text-danger">هذا الحقل مطلوب.</small>
+                    }
+                    }
+                </div>
+
+                <!-- checkBox -->
+                <div class="mt-2 d-flex justify-content-start align-items-center gap-2  flex-wrap">
+                  <label for="checkbox" class="form-label mb-0">صنف ليس له مخزون</label>
+                  <input class="form-check-input p-2" type="checkbox" value="" id="checkbox">
+
+                </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- sec2 on right -->
+      <div class="card mt-3 pb-3">
+        <div class="card-header mb-2  text-end fs-5 py-3">
+          المنتج
+        </div>
+        <div class="card-body" dir="rtl">
+          <div class="mb-3 col-md-6 col-sm-8 col-12 overflow-hidden ">
+            <label for="select" class="form-label">المخزن</label>
+            <select id="select" formControlName="selectInp" class="form-select overflow-hidden"  >
+              <option selected > منتج عادي </option>
+              <option>منتج متغير </option>
+            </select>
+
+
+          </div>
+
+
+          @if (itemsForm.get('selectInp')?.value === 'منتج متغير') {
+            <div class="flex-center justify-content-start gap-3 flex-wrap">
+              <label for="plus-item" class="form-label mb-0">اضف صفه اخري</label>
+              <button class="btn btn-primary " id="plus-item" type="button" title="plus item">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          <div class="add-item p-3 rounded mt-3">
+            <div class="row g-2">
+              <div class="col-md-5 col-12 ">
+                <label for="select" class="form-label">الصفه</label>
+                <select id="select"  class="form-select overflow-hidden" >
+                <option selected disabled> اختر الصفه</option>
+                </select>
+              </div>
+              <div class="col-md-5 col-12  ">
+                <label for="select" class="form-label">القيمه</label>
+                <select id="select"  class="form-select overflow-hidden" >
+
+                </select>
+              </div>
+              <div class="col-md-1 col-12  align-self-end">
+                <button class=" btn btn-primary " id="plus-item" type="button" title="plus item">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="card-body flex-center justify-content-start gap-3 flex-wrap  mt-2" >
+
+              <!-- purchasePrice -->
+              <div class="w100 add-small ">
+                <label for="purchasePrice" class="form-label fs-small">سعر الشراء </label>
+                <input type="number" formControlName="purchasePrice" id="purchasePrice" class="form-control" >
+              </div>
+
+              <!-- sellingPrice -->
+              <div class=" w100 add-small">
+                <label for="sellingPrice" class="form-label fs-small">سعر البيع </label>
+                <input type="number" formControlName="sellingPrice" id="sellingPrice" class="form-control" >
+              </div>
+
+              <!-- wholesalePrice -->
+              <div class=" w100 add-small">
+                <label for="wholesalePrice" class="form-label fs-small">سعر الجملة </label>
+                <input type="number" formControlName="wholesalePrice" id="wholesalePrice" class="form-control" >
+              </div>
+
+              <!-- semiWholesalePrice -->
+              <div class=" w100 add-small">
+                <label for="semiWholesalePrice" class="form-label  fs-small">سعر النصف جملة </label>
+                <input type="number" formControlName="semiWholesalePrice" id="semiWholesalePrice" class="form-control" >
+              </div>
+
+              <!-- amount -->
+              <div class="w100 add-small ">
+                <label for="amount" class="form-label fs-small">الكميه</label>
+                <input type="number"  id="amount" class="form-control" >
+              </div>
+
+            </div>
+
+            <div class="col-md-10 col-12">
+              <label for="image" class="form-label"> الصوره</label>
+              <input type="file"  id="image" class="form-control">
+            </div>
+
+            <div class="flex-center gap-3 justify-content-start  mt-3 flex-wrap">
+              <span class="fs-5">حذف الصفه بالكامل</span>
+              <button type="button" class="btn btn-danger" title="delete item">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit">asfas</button>
+</form>
+</div>
