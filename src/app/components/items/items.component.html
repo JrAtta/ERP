@@ -1,0 +1,91 @@
+<div class="container-fluid mt-5  mb-5  ">
+  <div class="flex-between px-2 mb-3">
+    <button class="btn btn-primary flex-center  gap-2" (click)="addItem()">
+      <i class="fas fa-plus"></i>
+      اضافة صنف
+    </button>
+    <h3 class="mb-0 fw-bold">الاصناف</h3>
+  </div>
+  <div class="card   mb-4" dir="rtl">
+    <div class="card-header  px-4 py-3  bg-white">
+      <h5 class=" fs-4 mb-0 ">
+        الاصناف
+      </h5>
+
+    </div>
+    <div class="card-body">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border  text-secondary">#</th>
+            <th colspan="1" class="border  text-secondary">كود الصنف</th>
+            <th colspan="1" class="border  text-secondary ">اسم الصنف</th>
+            <th colspan="1" class="border  text-secondary">القسم</th>
+            <th colspan="1" class="border  text-secondary">الوحده</th>
+            <th colspan="1" class=" border text-secondary">سعر الشراء</th>
+            <th colspan="1" class=" border text-secondary">سعر البيع</th>
+            <th colspan="1" class=" border text-secondary">صورة الصنف</th>
+            <th colspan="1" class="border text-secondary ">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr>
+            <td>1</td>
+            <td>#asf</td>
+            <td>afsafa</td>
+            <td>تالشبل</td>
+            <td>تالشبsafdaل</td>
+            <td>80</td>
+            <td>120</td>
+            <td class="small "><img src="./assets/images/000m.jpg" alt="" class=" rounded-circle object-fit-cover"
+                width="50"></td>
+            <td>
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="flex-between px-4 flex-wrap gap-2  ">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 1 الي 4 من كل 4 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </div>

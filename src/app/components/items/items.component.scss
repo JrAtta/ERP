@@ -1,0 +1,25 @@
+.container-fluid{
+  background: #F6F8FB;
+
+
+  .card-body{
+    width: 100%;
+    overflow-x: auto;
+
+   .table{
+    thead th{
+      background: #f6f8fb;
+    }
+    tbody td {
+      height:60px;
+    }
+   }
+
+  }
+
+}
+
+
+
+
+

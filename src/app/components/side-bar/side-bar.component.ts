@@ -58,16 +58,16 @@ export class SideBarComponent {
         return '/main/branches';
       case 'الاقسام':
         return '/main/departments';
-        case 'عرض المخازن':
+      case 'عرض المخازن':
           return '/main/inventories/create';
-          case 'عناصر المخازن':
+      case 'عناصر المخازن':
             return '/main/inventories/items';
       case 'الوحدات':
         return '/main/units';
       case 'الخيارات':
         return '/main/options/create';
       case 'الاصناف':
-        return '/main/products';
+        return '/main/items';
       case 'فئات الموردين':
         return '/main/categories';
       case 'الموردين':
