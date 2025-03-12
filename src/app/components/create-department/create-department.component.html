@@ -1,1 +1,36 @@
-<p>create-department works!</p>
+<div class="container-fluid my-5">
+  <div class="card" dir="rtl">
+    <div class="card-header my-3 fs-2 fw-bold border-0 " >
+      إضافة قسم
+
+    </div>
+   <form [formGroup]="createDepartmentForm" (ngSubmit)="submitCreateDepartmentForm()">
+
+    <div class="card-body row g-4 mb-3">
+      <div class="col-md-5 col-12">
+        <label for="nameAr" class="form-label">الإسم (عربي) </label>
+        <input type="text"  formControlName="nameAr" id="nameAr" class="form-control">
+          <!-- validation nameAr -->
+          @if (createDepartmentForm.get('nameAr')?.invalid && createDepartmentForm.get('nameAr')?.touched) {
+            @if (createDepartmentForm.get('nameAr')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (createDepartmentForm.get('nameAr')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
+            }
+            }
+      </div>
+      <div class="col-md-5 col-12">
+        <label for="img" class="form-label">الصوره</label>
+        <input type="file" name="" id="img" class="form-control">
+      </div>
+    </div>
+
+    <div class="card-footer p-3 text-start">
+      <button type="submit" class="btn btn-primary px-5">
+        حفظ
+      </button>
+    </div>
+   </form>
+  </div>
+</div>

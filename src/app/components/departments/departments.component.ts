@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class DepartmentsComponent {
   private readonly _Router = inject(Router);
 
-  creatDepartment(){
+  createDepartment(){
     this._Router.navigate(['/main/departments/create']);
   }
 }
