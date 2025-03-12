@@ -14,6 +14,7 @@ import { OptionsComponent } from './components/options/options.component';
 import { ItemsComponent } from './components/items/items.component';
 import { CreateItemsComponent } from './components/create-items/create-items.component';
 import { SupplierCategoriesComponent } from './components/supplier-categories/supplier-categories.component';
+import { SupplierComponent } from './components/supplier/supplier.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -38,8 +39,8 @@ export const routes: Routes = [
       { path: 'options/create', component: OptionsComponent },
       { path: 'items', component: ItemsComponent },
       { path: 'items/create', component: CreateItemsComponent },
-      // { path: 'supplier', component:  },
-      { path: 'supplier/categories', component: SupplierCategoriesComponent },
+      { path: 'suppliers', component:SupplierComponent  },
+      { path: 'suppliers/categories', component: SupplierCategoriesComponent },
 
     //... still not exist
 
