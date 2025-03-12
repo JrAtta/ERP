@@ -61,7 +61,7 @@ img, ion-icon, button, a { display: block; }
 }
 
 
-.has-scrollbar::-webkit-scrollbar-thumb{  background: red;
+.has-scrollbar::-webkit-scrollbar-thumb{
   border: 4px solid #151f2c ;
   -webkit-border-radius: 10px;
           border-radius: 10px;}
@@ -80,7 +80,7 @@ img, ion-icon, button, a { display: block; }
   -webkit-border-radius: 10px;
           border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 60%); }
+::-webkit-scrollbar-thumb:hover { background:#182433 }
 .modal-backdrop
 {
   z-index: 0;

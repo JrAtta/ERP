@@ -33,14 +33,32 @@
   white-space: nowrap !important;
 }
 .add-small{
+@media (max-width:500px) {
   label{
-  white-space: wrap !important;
-  }
+    white-space: wrap !important;
+    }
+}
 
 }
 .w100{
   width: 100px;
   @media (max-width:450px) {
     width: 100% !important;
+  }
+}
+
+.fs-mb{
+  @media (max-width:450px) {
+    font-size: 13px;
+  }
+}
+
+.img-container{
+  width: 100px;
+  height: 100px;
+  background: #F6F8FB;
+  @media (max-width:768px) {
+    margin: auto;
+    margin-top: 10px;
   }
 }

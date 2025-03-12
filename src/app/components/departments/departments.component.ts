@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departments',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './departments.component.scss'
 })
 export class DepartmentsComponent {
+  private readonly _Router = inject(Router);
 
+  creatDepartment(){
+    this._Router.navigate(['/main/departments/create']);
+  }
 }

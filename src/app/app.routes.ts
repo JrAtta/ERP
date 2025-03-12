@@ -1,3 +1,4 @@
+import { CreateDepartmentComponent } from './components/create-department/create-department.component';
 import { Routes } from '@angular/router';
 import { AuthComponent } from './layouts/auth-layout/auth/auth.component';
 import { LoginComponent } from './components/login/login.component';
@@ -29,6 +30,7 @@ export const routes: Routes = [
     {path:'home', component:HomeComponent },
     { path: 'branches', component: BranchesComponent },
     { path: 'departments', component: DepartmentsComponent },
+    { path: 'departments/create', component: CreateDepartmentComponent },
     { path: 'inventories/create', component: InventoriesComponent,},
       {path: 'inventories/items', component:InventoryItemsComponent},
       { path: 'units', component: UnitsComponent },

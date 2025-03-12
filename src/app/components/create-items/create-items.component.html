@@ -1,5 +1,5 @@
 <div class="container-fluid  py-5 ">
-  <form [formGroup]="itemsForm" (ngSubmit)="submitItemsForm()">
+  <form [formGroup]="itemsForm" (ngSubmit)="submitItemsForm()" >
   <div class="row g-3">
 
       <!-- section on left -->
@@ -160,8 +160,6 @@
               <option selected > منتج عادي </option>
               <option>منتج متغير </option>
             </select>
-
-
           </div>
 
 
@@ -244,8 +242,113 @@
           }
         </div>
       </div>
+
+        <!-- sec3 on right -->
+        <div class="card mt-3 pb-3">
+          <div class="card-header mb-2  text-end fs-5 py-3">
+            تفاصيل الوحدة
+          </div>
+          <div class="card-body row g-3" dir="rtl">
+
+            <div class=" col-md-6 col-sm-8 col-12 overflow-hidden ">
+              <label for="selectItem" class="form-label">الوحدة الاساسية </label>
+              <select id="selectItem" formControlName="selectInp2" class="form-select overflow-hidden"  >
+                <option selected > الوحده الاولي </option>
+                <option>الوحده الثانيه </option>
+              </select>
+            </div>
+
+          <div class=" col-md-6 col-sm-8 col-12 align-self-end">
+            <button  type="button" class="btn btn-primary flex-center gap-2 fw-semibold fs-mb" (click)="toggleAddSubItem()">
+              <i class="fas fa-plus"></i>
+              اضافه وحده فرعيه
+            </button>
+          </div>
+
+          <!-- add sub unit -->
+
+        @if (addSubItem) {
+          <div class=" row  mt-2 g-3" >
+
+            <!-- select sub unit -->
+            <div class=" col-xl-3 col-sm-6 col-12 add-small">
+              <label for="selectSubUnit" class="form-label fs-small">ختر الوحدة الفرعية </label>
+              <select id="selectSubUnit" class="form-select">
+                <option value="" selected disabled> اختر الوحده الفرعيه</option>
+                <option>  الوحده الفرعيه </option>
+              </select>
+
+            </div>
+
+            <!-- choose amount -->
+            <div class=" col-xl-3 col-sm-6 col-12 add-small">
+              <label for="subUnitAmount" class="form-label fs-small"> حدد الكمية </label>
+              <input type="number"  id="subUnitAmount" class="form-control" >
+            </div>
+
+            <!-- sub Unit Price -->
+            <div class=" col-xl-3 col-sm-6 col-12 add-small">
+              <label for="subUnitPrice" class="form-label  fs-small"> سعر الوحدة الفرعية </label>
+              <input type="number"  id="subUnitPrice" class="form-control" >
+            </div>
+
+            <!-- barCode -->
+            <div class="col-xl-3 col-sm-6 col-12 add-small ">
+              <label for="barCode" class="form-label fs-small text-start" >Bar code</label>
+              <input type="text"  id="barCode" class="form-control" >
+            </div>
+
+          </div>
+        }
+
+          </div>
+        </div>
+
+        <!-- sec4 on right -->
+        <div class="card mt-3 py-4  gap-3" dir="rtl">
+       <div class="card-body row g-3">
+        <div class="col-md-6 col-12  ">
+          <label for="img" class="form-label">الصوره </label>
+          <input type="file" (change)="onFileSelected($event)" accept="image/*" id="img" class="form-control" />
+            <p *ngIf="errorMessage" class="text-danger mb-0">{{ errorMessage }}</p>
+
+        </div>
+        <div class="col-md-6 col-12 img-container border rounded overflow-hidden flex-center p-0" >
+        <div *ngIf="imagePreview" class="w-100">
+          <img [src]="imagePreview" alt="Uploaded Image" class="w-100 object-fit-cover " />
+        </div>
+        </div>
+       </div>
+        </div>
+
+        <!-- sec5 on right -->
+         <div class="card mt-3" dir="rtl">
+          <div class="card-header mb-2  text-end fs-5 py-3">
+            الرصيد الافتتاحي
+          </div>
+          <div class="card-body row g-4 pb-4">
+            <div class="col-lg-4 col-md-6 col-12">
+              <label for="inventory" class="form-label">المخزن </label>
+              <select   id="inventory" class="form-select">
+                <option value="">محزن 1</option>
+                <option value="">محزن 2</option>
+              </select>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <label for="amount" class="form-label">الكيمة </label>
+             <input type="number"  id="amount" class="form-control">
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <label for="expireDate" class="form-label">تاريخ انتهاء الصلاحية </label>
+             <input type="date"  id="expireDate" class="form-control">
+            </div>
+
+          </div>
+         </div>
     </div>
   </div>
-  <button type="submit">asfas</button>
+  <div dir="rtl">
+    <button type="submit" class="btn btn-primary text-start mt-3 px-3" >حفظ</button>
+  </div>
 </form>
 </div>
