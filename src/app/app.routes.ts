@@ -13,6 +13,7 @@ import { UnitsComponent } from './components/units/units.component';
 import { OptionsComponent } from './components/options/options.component';
 import { ItemsComponent } from './components/items/items.component';
 import { CreateItemsComponent } from './components/create-items/create-items.component';
+import { SupplierCategoriesComponent } from './components/supplier-categories/supplier-categories.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -37,8 +38,11 @@ export const routes: Routes = [
       { path: 'options/create', component: OptionsComponent },
       { path: 'items', component: ItemsComponent },
       { path: 'items/create', component: CreateItemsComponent },
+      // { path: 'supplier', component:  },
+      { path: 'supplier/categories', component: SupplierCategoriesComponent },
+
     //... still not exist
-    // ... إضافة المزيد من الـ routes حسب الحاجة
+
   ]},
 
   //dashboard Layout

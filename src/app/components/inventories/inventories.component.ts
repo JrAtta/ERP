@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { SupplierCategoriesComponent } from "../supplier-categories/supplier-categories.component";
 
 @Component({
   selector: 'app-inventories',
   standalone: true,
-  imports: [ReactiveFormsModule , ],
+  imports: [ReactiveFormsModule, SupplierCategoriesComponent],
   templateUrl: './inventories.component.html',
   styleUrl: './inventories.component.scss'
 })

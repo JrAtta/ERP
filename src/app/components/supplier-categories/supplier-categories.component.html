@@ -1,33 +1,37 @@
 <div class="container-fluid mt-3  mb-5  ">
   <div class="card  mb-4" dir="rtl">
     <div class="card-header border-0 p-4  bg-white">
-      <h2 class=" fw-bold ">إضافة مخزن
+      <h2 class=" fw-bold ">إضافة فئة الموردين
+
       </h2>
     </div>
     <div class="card-body p-0 ">
-      <form [formGroup]="inventoriesForm" (ngSubmit)="submitInventoriesForm()" class="">
+      <form [formGroup]="supplierCatForm" (ngSubmit)="submitSupplierForm()" class="">
 
         <div class="row px-4">
 
-          <!-- nameAr -->
-          <div class="mb-3 col-sm-10 col-12">
-            <label for="nameAr" class="form-label "> الإسم (عربي)</label>
-            <input type="text" formControlName="nameAr" class="form-control" id="nameAr" placeholder="اسم المخزن">
+          <!-- name -->
+          <div class="mb-3 col-sm-5 col-12">
+            <label for="name" class="form-label "> الإسم</label>
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="اسم الفئه">
 
-            <!-- validation nameAr -->
-            @if (inventoriesForm.get('nameAr')?.invalid && inventoriesForm.get('nameAr')?.touched) {
-            @if (inventoriesForm.get('nameAr')?.errors?.['required']) {
+            <!-- validation name -->
+            @if (supplierCatForm.get('name')?.invalid && supplierCatForm.get('name')?.touched) {
+            @if (supplierCatForm.get('name')?.errors?.['required']) {
             <small class="text-danger">هذا الحقل مطلوب.</small>
-            }
-            @if (inventoriesForm.get('nameAr')?.errors?.['pattern']) {
-            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
             }
             }
           </div>
 
+          <div class="mb-3 col-sm-5 col-12">
+            <label for="description" class="form-label "> الوصف</label>
+            <textarea name="" id="description" class="form-control" rows="1"></textarea>
+
+          </div>
+
 
         </div>
-        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+        <div class="  d-flex justify-content-end card-footer bg-transparent mt-3 p-3">
           <button class="btn btn-primary  p-2   " type="submit" style="width: 18%;">
             حفظ
           </button>
@@ -39,7 +43,8 @@
   <div class=" data-table border rounded card " dir="rtl">
 
     <h3 class=" fs-5 p-4 card-header  bg-white ">
-      المخازن
+      فئات الموردين
+
     </h3>
 
     <div class="card-body px-0">
@@ -62,15 +67,18 @@
       <table class="table table-hover text-nowrap transition  ">
         <thead class="small ">
           <tr>
-            <th colspan="1" class="border text-secondary small">#</th>
-            <th colspan="1" class="border text-secondary small ">الاسم</th>
-            <th colspan="1" class="border text-secondary small ">العمليات</th>
+            <th colspan="1" class="border text-secondary ">#</th>
+            <th colspan="1" class="border text-secondary  "> الاسم (بالعربيه)</th>
+            <th colspan="1" class="border text-secondary  ">الوصف</th>
+            <th colspan="1" class="border text-secondary  ">العمليات</th>
           </tr>
         </thead>
         <tbody class="">
           <tr class="">
             <th class="">1</th>
-            <td class="fs-5 ">مخزن 1</td>
+            <td class="fs-5 ">فئه 1</td>
+            <td></td>
+
             <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
               <button class="transition btn btn-outline-primary flex-center gap-3 ">
                 <i class="fas fa-user-pen"></i>
@@ -84,7 +92,8 @@
           </tr>
           <tr class="">
             <th class="">1</th>
-            <td class="fs-5 ">مخزن 1</td>
+            <td class="fs-5 ">فئه 2</td>
+            <td></td>
             <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
               <button class="transition btn btn-outline-primary flex-center gap-3 ">
                 <i class="fas fa-user-pen"></i>
@@ -129,3 +138,6 @@
   </div>
 
 </div>
+
+
+
