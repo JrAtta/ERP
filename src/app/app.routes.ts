@@ -15,11 +15,11 @@ import { ItemsComponent } from './components/items/items.component';
 import { CreateItemsComponent } from './components/create-items/create-items.component';
 import { SupplierCategoriesComponent } from './components/supplier-categories/supplier-categories.component';
 import { SupplierComponent } from './components/supplier/supplier.component';
+import { SupplierStatementComponent } from './components/supplier-statement/supplier-statement.component';
 
 export const routes: Routes = [
    //Auth Layouts
-  // {path:'' , component:AuthComponent , children:[
-  {path:'auth' , component:AuthComponent , children:[
+    {path:'auth' , component:AuthComponent , children:[
     {path:'' , redirectTo:'login', pathMatch:'full'},
     {path:'login' , component:LoginComponent},
     // {path:'register' , component:}, still not exist
@@ -27,7 +27,6 @@ export const routes: Routes = [
 
   //main Layouts
   {path:'main' , component:MainComponent , children : [
-  // {path:'' , component:MainComponent , children : [
     {path:'', redirectTo : 'home' , pathMatch:'full' },
     {path:'home', component:HomeComponent },
     { path: 'branches', component: BranchesComponent },
@@ -41,6 +40,7 @@ export const routes: Routes = [
       { path: 'items/create', component: CreateItemsComponent },
       { path: 'suppliers', component:SupplierComponent  },
       { path: 'suppliers/categories', component: SupplierCategoriesComponent },
+      { path: 'suppliers/statement', component: SupplierStatementComponent },
 
     //... still not exist
 

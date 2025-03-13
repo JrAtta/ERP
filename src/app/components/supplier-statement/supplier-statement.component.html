@@ -1,0 +1,122 @@
+<div class="container-fluid my-3 ">
+  <h3 class="fw-semibold text-end px-2">
+    كشف حساب الموردين
+  </h3>
+  <!-- card 1 -->
+  <div class="card my-4" dir="rtl">
+    <div class="card-header py-3 fs-5 ">
+      كشف حساب الموردين
+    </div>
+   <form action="">
+    <div class="card-body row">
+
+      <div class="mb-3 col-sm-5 col-12">
+        <label for="fromDate" class="form-label "> من تاريخ</label>
+        <input type="date" id="fromDate" class="form-control">
+      </div>
+
+      <div class="mb-3 col-sm-5 col-12">
+        <label for="toDate" class="form-label "> إلى تاريخ</label>
+        <input type="date" id="toDate" class="form-control">
+      </div>
+
+      <div class="mb-3 col-sm-4 col-12">
+        <label for="supplier" class="form-label "> المورد</label>
+        <select  id="supplier" class="form-control">
+          <option value=""  selected >اختر المورد</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="card-footer text-start">
+      <button type="submit" class="btn btn-primary  "> حفظ</button>
+    </div>
+   </form>
+
+  </div>
+
+  <!-- card 2 -->
+  <div class="card mb-4 " dir="rtl">
+    <div class="card-header py-3 fs-2 fw-bold ">
+      تفاصيل كشف الحساب
+    </div>
+    <div class="card-body lh-lg">
+      <p class="fs-5 mb-0">الاسم: __</p>
+      <p class="fs-5 mb-0">رقم الحساب: __</p>
+      <p class="fs-5 mb-0">الرصيد الحالي: __</p>
+    </div>
+  </div>
+
+  <!-- table -->
+
+  <div class=" data-table border rounded card " dir="rtl">
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary  text-uppercase"> # </th>
+            <th colspan="1" class="border text-secondary  "> المورد</th>
+            <th colspan="1" class="border text-secondary  "> الحركه </th>
+            <th colspan="1" class="border text-secondary  ">التاريخ</th>
+            <th colspan="1" class="border text-secondary  ">الرصيد قبل</th>
+            <th colspan="1" class="border text-secondary  ">المبلغ</th>
+            <th colspan="1" class="border text-secondary  ">الرصيد بعد </th>
+            <th colspan="1" class="border text-secondary  ">الوصف</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="text-center">
+            <td colspan="8" >
+              جدول خالي
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 1 الي 4 من كل 4 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>

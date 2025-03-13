@@ -73,7 +73,7 @@ export class SideBarComponent {
       case 'الموردين':
         return '/main/suppliers';
       case 'كشف حساب الموردين':
-        return '/main/account';
+        return '/main/suppliers/statement';
       case 'كشف حساب العميل':
         return '/main/account';
       case 'العملاء':
