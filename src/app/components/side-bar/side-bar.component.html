@@ -3,20 +3,20 @@
 <div class="hanger pt-2">
   <div class="logo flex-center ">
     <i class="fas fa-bars fa-lg d-block d-lg-none" (click)="toggleSidebar()" [ngClass]="{'fa-x ': isSidebarVisible }"></i>
-    <!-- <i class="fas fa-x fa-lg d-block d-lg-none" (click)="toggleSidebar()"></i> -->
+    
     <img src="./assets/images/logo.png" width="90" alt="">
   </div>
-  <div class="hanger-content mt-3 pt-2  px-1 ps-3" [ngClass]="{'show': isSidebarVisible}">
-    <ul class="navbar-nav p-0">
+  <div class="hanger-content mt-3 pt-2  px-1 ps-3 transition" [ngClass]="{'show': isSidebarVisible}">
+    <ul class="navbar-nav p-0 ">
      @for (item of serviceList; track $index) {
       <li class="nav-item cursor">
         <!-- العنوان الرئيسي -->
-        <a class="flex-between nav-link"
+        <a class="flex-between nav-link transition"
            (click)="item.services ? toggleCollapse($index) : null"
            [routerLink]="item.services ? null : getTitleRoute(item.title)"
            [ngClass]="{ 'active-nav-link': isCollapsed[$index] }"
            >
-          <div class="d-flex align-items-center gap-2">
+          <div class="d-flex align-items-center gap-2 transition">
             <i [class]="item.icon"></i>
             <span class="fs-5">{{ item.title }}</span>
           </div>
@@ -25,10 +25,10 @@
 
         <!-- الخدمات الفرعية -->
         @if (item.services) {
-          <div class="collapse " [class.show]="isCollapsed[$index]">
-            <ul class="d-flex flex-column pe-4">
+          <div class="collapse transition" [class.show]="isCollapsed[$index]">
+            <ul class="d-flex flex-column pe-4 transition">
               @for (service of item.services; track $index) {
-                <li class="nav-item">
+                <li class="nav-item transition">
                   <a class="nav-link pt-0" [routerLink]="getServiceRoute(service)"> {{ service }} </a>
                 </li>
               }

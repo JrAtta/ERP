@@ -1,3 +1,4 @@
+import { ClientsComponent } from './components/clients/clients.component';
 import { CreateDepartmentComponent } from './components/create-department/create-department.component';
 import { Routes } from '@angular/router';
 import { AuthComponent } from './layouts/auth-layout/auth/auth.component';
@@ -16,6 +17,7 @@ import { CreateItemsComponent } from './components/create-items/create-items.com
 import { SupplierCategoriesComponent } from './components/supplier-categories/supplier-categories.component';
 import { SupplierComponent } from './components/supplier/supplier.component';
 import { SupplierStatementComponent } from './components/supplier-statement/supplier-statement.component';
+import { ClientsStatementComponent } from './components/clients-statement/clients-statement.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -41,6 +43,8 @@ export const routes: Routes = [
       { path: 'suppliers', component:SupplierComponent  },
       { path: 'suppliers/categories', component: SupplierCategoriesComponent },
       { path: 'suppliers/statement', component: SupplierStatementComponent },
+      { path: 'clients', component: ClientsComponent },
+      { path: 'clients/statement', component: ClientsStatementComponent },
 
     //... still not exist
 
