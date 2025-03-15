@@ -1,0 +1,139 @@
+<div class="container-fluid pt-3 mb-5  ">
+
+  <h3 class="fw-bold text-end p-2 h4">المشتريات</h3>
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header p-4 pb-0  bg-white">
+      <h4 class=" h5 ">المشتريات
+      </h4>
+    </div>
+    <form [formGroup]="purchaseForm" (ngSubmit)="submitPurchaseForm()">
+      <div class="card-body p-0 pt-4">
+
+        <div class="row px-4 ">
+
+          <!-- كود الفاتورة -->
+          <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="codeBill" class="form-label">كود الفاتورة</label>
+            <input type="text" id="codeBill" class="form-control" formControlName="codeBill">
+            @if(purchaseForm.get('codeBill')?.invalid && purchaseForm.get('codeBill')?.touched){
+              @if (purchaseForm.get('codeBill')?.getError('required')) {
+                <small class="text-danger">هذا الحقل مطلوب.</small>
+              }
+            }
+          </div>
+
+          <!-- من تاريخ -->
+          <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="dateFrom" class="form-label">من تاريخ </label>
+            <input type="date" id="dateFrom" class="form-control" >
+          </div>
+
+           <!-- إلى تاريخ -->
+           <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="dateTo" class="form-label">إلى تاريخ</label>
+            <input type="date" id="dateTo" class="form-control" >
+          </div>
+
+
+           <!-- المورد -->
+           <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="supplier" class="form-label">المورد</label>
+            <select  id="supplier" class="form-select" >
+              <option value="" selected> اختر الموارد</option>
+              <option > مورد 1</option>
+            </select>
+          </div>
+
+           <!-- المخزن -->
+           <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="inventory" class="form-label">المخزن</label>
+            <select  id="inventory" class="form-select" >
+              <option value="" selected> اختر المخزن</option>
+              <option > مخزن 1</option>
+            </select>
+          </div>
+
+
+        </div>
+        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+          <button class="btn btn-primary  p-2 px-4  " type="submit" >
+            بحث
+          </button>
+        </div>
+    </div>
+    </form>
+  </div>
+
+  <div class=" data-table border rounded card m " dir="rtl">
+
+
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary ">ID</th>
+            <th colspan="1" class="border text-secondary  ">اسم المورد</th>
+            <th colspan="1" class="border text-secondary  ">المخزن</th>
+            <th colspan="1" class="border text-secondary  ">كود الفاتورة</th>
+            <th colspan="1" class="border text-secondary  ">اجمالي الفاتورة</th>
+            <th colspan="1" class="border text-secondary  ">اجمالي المدفوع</th>
+            <th colspan="1" class="border text-secondary  ">تفاصيل الفاتورة</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td colspan="7" class="empty fs-5">
+              جدول خالي
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 h5 ">
+          لا يوجد سجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>

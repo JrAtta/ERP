@@ -74,18 +74,18 @@ export class SideBarComponent {
         return '/main/suppliers';
       case 'كشف حساب الموردين':
         return '/main/suppliers/statement';
-        case 'العملاء':
+      case 'العملاء':
           return '/main/clients';
-          case 'كشف حساب العميل':
+      case 'كشف حساب العميل':
             return '/main/clients/statement';
       case 'سندات القبض':
         return '/main/cash/in';
       case 'سندات الصرف':
         return '/main/cash/out';
+        case 'فواتير المشتريات':
+          return '/main/purchase';
       case 'اضافة فاتورة مشتريات':
-        return '/main/add';
-      case 'فواتير المشتريات':
-        return '/main/list';
+        return '/main/purchase/create';
       case 'اضافة فاتورة مبيعات':
         return '/main/add';
       case 'فواتير المبيعات':

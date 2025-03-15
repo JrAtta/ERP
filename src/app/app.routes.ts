@@ -20,6 +20,8 @@ import { SupplierStatementComponent } from './components/supplier-statement/supp
 import { ClientsStatementComponent } from './components/clients-statement/clients-statement.component';
 import { CashInComponent } from './components/cash-in/cash-in.component';
 import { CashOutComponent } from './components/cash-out/cash-out.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
+import { CreatePurchaseComponent } from './components/create-purchase/create-purchase.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -49,6 +51,8 @@ export const routes: Routes = [
       { path: 'clients/statement', component: ClientsStatementComponent },
       { path: 'cash/in', component: CashInComponent },
       { path: 'cash/out', component: CashOutComponent },
+      { path: 'purchase', component: PurchaseComponent },
+      { path: 'purchase/create', component: CreatePurchaseComponent },
 
     //... still not exist
 
