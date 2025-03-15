@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    },
+    "config": {
+      "external": ["zone.js", "zone.js/node"]
+    }
+  }
+}
