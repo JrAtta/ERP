@@ -2,17 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["dist/erp/**"]
-      }
+      "src": "dist/erp/server/server.mjs",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/erp/server/server.mjs"
+      "dest": "/dist/erp/server/server.mjs",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     }
   ]
 }
