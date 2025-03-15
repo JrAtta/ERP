@@ -1,10 +1,18 @@
 {
-  "build": {
-    "env": {
-      "NODE_OPTIONS": "--openssl-legacy-provider"
-    },
-    "config": {
-      "external": ["zone.js", "zone.js/node"]
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/erp/**"]
+      }
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/erp/server/server.mjs"
+    }
+  ]
 }
