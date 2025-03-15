@@ -1,0 +1,107 @@
+<div class="container-fluid mt-5 mb-3">
+  <div class="card pt-3">
+
+    <form [formGroup]="cashInForm" (ngSubmit)="submitCashInForm()">
+
+      <div class="card-body row g-4 mb-3" dir="rtl">
+
+        <!-- النوع -->
+        <div class="col-md-6 col-12">
+          <label for="type" class="form-label">النوع</label>
+          <select class="form-select" id="type">
+            <option value="" disabled selected> اختر النوع</option>
+            <option value="" >مورد</option>
+            <option value="" >عميل</option>
+          </select>
+        </div>
+
+        <!-- اختر الشخص-->
+        <div class="col-md-6 col-12">
+          <label for="choosePerson" class="form-label">اختر الشخص</label>
+          <select class="form-select" id="choosePerson">
+            <option value=""  selected> اختر الشخص</option>
+          </select>
+        </div>
+
+          <!-- الحساب الحالي-->
+          <div class="col-md-6 col-12">
+            <label for="currentAcc" class="form-label">الحساب الحالي</label>
+           <input type="number"  id="currentAcc" class="form-control" value="0" readonly disabled>
+          </div>
+
+           <!-- الحركة للخزنة-->
+        <div class="col-md-6 col-12">
+          <label for="action" class="form-label">الحركة للخزنة</label>
+          <select class="form-select" id="action" disabled>
+            <option value=""  selected  > قبض</option>
+          </select>
+        </div>
+
+         <!-- المبلغ-->
+         <div class="col-md-6 col-12">
+          <label for="theAmount" class="form-label">المبلغ</label>
+         <input type="number"  id="theAmount" class="form-control" >
+        </div>
+
+         <!-- تاريخ المعاملة-->
+         <div class="col-md-6 col-12">
+          <label for="transactionDate" class="form-label">تاريخ المعاملة</label>
+         <input type="date"  id="transactionDate" class="form-control" >
+        </div>
+
+        <!-- حدد خزينة الدفع-->
+        <div class="col-md-6 col-12">
+          <label for="paymentTreasury" class="form-label">حدد خزينة الدفع</label>
+          <select class="form-select" id="paymentTreasury">
+            <option value=""  selected disabled> حدد خزينة الدفع</option>
+            <option value=""  > الخزنه الرئيسية</option>
+          </select>
+        </div>
+
+        <!-- طريقة الدفع-->
+        <div class="col-md-6 col-12">
+          <label for="paymentMethod" class="form-label">طريقة الدفع</label>
+          <select class="form-select" id="paymentMethod" formControlName="paymentMethod">
+            <option value="" disabled > طريقة الدفع</option>
+            <option> نقدي</option>
+            <option>تحويل بنكي</option>
+          </select>
+          @if (cashInForm.get('paymentMethod')?.invalid && cashInForm.get('paymentMethod')?.touched) {
+            @if (cashInForm.get('paymentMethod')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+          }
+          </div>
+
+
+
+        <!-- الفرع الرئيسي-->
+        <div class="col-md-6 col-12">
+          <label for="mainBranche" class="form-label">main.branches</label>
+          <select class="form-select" id="mainBranche">
+            <option value=""  selected disabled> admin.choose-branche</option>
+            <option value=""  > الفرع الرئيسي</option>
+          </select>
+        </div>
+
+        <!-- رقم الشيك-->
+      @if (cashInForm.get('paymentMethod')?.value === 'تحويل بنكي') {
+        <div class="col-md-6 col-12">
+          <label for="checkNumber" class="form-label">رقم الشيك</label>
+          <input type="text" class="form-control" id="checkNumber">
+        </div>
+      }
+
+        <!-- الوصف-->
+        <div class="col-md-6 col-12">
+          <label for="description" class="form-label">الوصف</label>
+          <textarea  id="description" class="form-control" rows="1" ></textarea>
+        </div>
+
+      </div>
+      <div class="card-footer p-3">
+        <button type="submit" class="btn btn-primary px-3 p-2" > حفظ</button>
+      </div>
+    </form>
+  </div>
+</div>

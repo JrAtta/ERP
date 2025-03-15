@@ -79,9 +79,9 @@ export class SideBarComponent {
           case 'كشف حساب العميل':
             return '/main/clients/statement';
       case 'سندات القبض':
-        return '/main/receipt';
+        return '/main/cash/in';
       case 'سندات الصرف':
-        return '/main/payment';
+        return '/main/cash/out';
       case 'اضافة فاتورة مشتريات':
         return '/main/add';
       case 'فواتير المشتريات':

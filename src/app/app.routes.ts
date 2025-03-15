@@ -18,6 +18,8 @@ import { SupplierCategoriesComponent } from './components/supplier-categories/su
 import { SupplierComponent } from './components/supplier/supplier.component';
 import { SupplierStatementComponent } from './components/supplier-statement/supplier-statement.component';
 import { ClientsStatementComponent } from './components/clients-statement/clients-statement.component';
+import { CashInComponent } from './components/cash-in/cash-in.component';
+import { CashOutComponent } from './components/cash-out/cash-out.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -45,6 +47,8 @@ export const routes: Routes = [
       { path: 'suppliers/statement', component: SupplierStatementComponent },
       { path: 'clients', component: ClientsComponent },
       { path: 'clients/statement', component: ClientsStatementComponent },
+      { path: 'cash/in', component: CashInComponent },
+      { path: 'cash/out', component: CashOutComponent },
 
     //... still not exist
 
