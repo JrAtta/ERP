@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "dist/erp/server/server.mjs",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["dist/erp/server/**", "dist/erp/browser/**"]
+        "includeFiles": ["dist/erp/browser/**", "dist/erp/server/**"]
       }
     }
   ],
