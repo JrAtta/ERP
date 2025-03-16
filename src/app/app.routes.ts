@@ -22,6 +22,7 @@ import { CashInComponent } from './components/cash-in/cash-in.component';
 import { CashOutComponent } from './components/cash-out/cash-out.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { CreatePurchaseComponent } from './components/create-purchase/create-purchase.component';
+import { CreateSellComponent } from './components/create-sell/create-sell.component';
 
 export const routes: Routes = [
    //Auth Layouts
@@ -53,6 +54,8 @@ export const routes: Routes = [
       { path: 'cash/out', component: CashOutComponent },
       { path: 'purchase', component: PurchaseComponent },
       { path: 'purchase/create', component: CreatePurchaseComponent },
+      // { path: 'sell', component: CreatePurchaseComponent }, still not exist
+      { path: 'sell/create', component: CreateSellComponent },
 
     //... still not exist
 
@@ -60,5 +63,5 @@ export const routes: Routes = [
 
   //dashboard Layout
 
-  {path:"dashboard" , loadComponent: () =>import('./layouts/dashboard-layout/dashboard/dashboard.component').then(m=>m.DashboardComponent) }
+  // {path:"dashboard" , loadComponent: () =>import('./layouts/dashboard-layout/dashboard/dashboard.component').then(m=>m.DashboardComponent) }
 ];

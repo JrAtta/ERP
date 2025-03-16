@@ -1,0 +1,167 @@
+[33mcommit affc80cf76e19880f082069dbbb704d4c382897b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 16 14:54:48 2025 +0200
+
+    Fix SSR build and ensure server.mjs is included
+
+[33mcommit e41fce9961ac795998c13ef160e61cd94587524d[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 16 02:16:00 2025 +0200
+
+    Fix SSR build and ensure server.mjs is included
+
+[33mcommit 39ba7bd96312a86b20547b470d59ff5cba8800f8[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 16 02:12:24 2025 +0200
+
+    try fix agian
+
+[33mcommit 2134db5121e68d4726926b51439548815aeca3d8[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 16 01:38:57 2025 +0200
+
+    Update vercel.json for SSR runtime
+
+[33mcommit 0f60e9be9c0dedbb2bb1fa80a641625014b43ba0[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 16 00:55:37 2025 +0200
+
+    Fix SSR build for Vercel deployment
+
+[33mcommit f56ffd82e4c5cfe6fe48243f6e3a4a1c606b9ec1[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 16 00:07:54 2025 +0200
+
+    fix error >> make zone.js, zone.js/node as external
+
+[33mcommit ee1e41c6cfefaf11a8b293e47bf3963fe4bba4a5[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sat Mar 15 23:26:33 2025 +0200
+
+    work on purchase and create-purchase comp
+
+[33mcommit 54a67872300471a484ffd512209750da4eea2588[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sat Mar 15 21:50:47 2025 +0200
+
+    work on cash in/out comp
+
+[33mcommit 701d9670fd9f3e9d5c67b56fd827efd1c3efbbf9[m
+Author: heka <Aee23530@gmail.com>
+Date:   Fri Mar 14 17:43:42 2025 +0200
+
+    work on clients , clients-statemnet comp
+
+[33mcommit fce046228f3509d6920837da0b598dbfeea3df4d[m
+Author: heka <Aee23530@gmail.com>
+Date:   Thu Mar 13 18:37:22 2025 +0200
+
+    work on supplier-statement
+
+[33mcommit 793b276a254fac993c20c5f24042a9890f7f9682[m
+Author: heka <Aee23530@gmail.com>
+Date:   Thu Mar 13 01:35:18 2025 +0200
+
+    work on suppliers comp
+
+[33mcommit 5121f6d08e463413fb02ac2938c5e392b0ca20d8[m
+Author: heka <Aee23530@gmail.com>
+Date:   Thu Mar 13 00:25:29 2025 +0200
+
+    work on suppliers-categories
+
+[33mcommit 1c916ceb893b61b0bccc8acebcc9dc30fc79d9c8[m
+Author: heka <Aee23530@gmail.com>
+Date:   Wed Mar 12 23:18:46 2025 +0200
+
+     work on create-department
+
+[33mcommit f8fe21bbd5189972f1e82b5f589b08c658fab175[m
+Author: heka <Aee23530@gmail.com>
+Date:   Wed Mar 12 21:42:59 2025 +0200
+
+    complete work on creat-items and create new comp >> create-department
+
+[33mcommit 5bd18620d9476e7a8c1b148e0924d8d5da1c9734[m
+Author: heka <Aee23530@gmail.com>
+Date:   Wed Mar 12 01:38:31 2025 +0200
+
+    work on create-items comp
+
+[33mcommit 7535467f53e216421c082a404d8c0f5c107d28fb[m
+Author: heka <Aee23530@gmail.com>
+Date:   Tue Mar 11 08:00:34 2025 +0200
+
+    work on items comp, Create create-item comp
+
+[33mcommit 2b61772d891d9ba08c9579b65e0570458871cc0c[m
+Author: heka <Aee23530@gmail.com>
+Date:   Tue Mar 11 00:59:14 2025 +0200
+
+    work on options comp
+
+[33mcommit cd5859900116f661342fc163c5e78ee777e3111b[m
+Author: heka <Aee23530@gmail.com>
+Date:   Tue Mar 11 00:16:37 2025 +0200
+
+    work on units comp
+
+[33mcommit 507e00e2b374457c9a6b14ce0efbc1116b4a0d94[m
+Author: heka <Aee23530@gmail.com>
+Date:   Mon Mar 10 23:19:50 2025 +0200
+
+    work on inventory-items comp
+
+[33mcommit cf5c1b11ffcfe75ebcdaeb48816e1c4b7418775d[m
+Author: heka <Aee23530@gmail.com>
+Date:   Mon Mar 10 17:33:14 2025 +0200
+
+    work on inventories comp
+
+[33mcommit 29b6fee7bc5dd874d3c61210fee7e620b9fefafd[m
+Author: heka <Aee23530@gmail.com>
+Date:   Mon Mar 10 08:30:02 2025 +0200
+
+    complete work on branch comp
+
+[33mcommit 074dbc953798a41167a82f72ea198f2cd4ef81c7[m
+Author: heka <Aee23530@gmail.com>
+Date:   Mon Mar 10 01:56:48 2025 +0200
+
+    fix some logic in side-bar and work on branch comp
+
+[33mcommit daead1d83af5309c55ad1993e75ccb299efddcde[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 9 13:38:29 2025 +0200
+
+     delete primeng , ngx-easy-table from package.json
+
+[33mcommit d817673f56ed884b424033251726d103b81470a9[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sun Mar 9 13:26:41 2025 +0200
+
+    work on main-page
+
+[33mcommit 0da34ae3e09b85d5f63c7d472a0cdc98c10b9d6e[m
+Author: heka <Aee23530@gmail.com>
+Date:   Sat Mar 8 23:26:55 2025 +0200
+
+    work on side-bar
+
+[33mcommit 49837da6148008222230ec3234979279ad8f76ee[m
+Author: heka <Aee23530@gmail.com>
+Date:   Fri Mar 7 17:11:44 2025 +0200
+
+    work on nav-bar
+
+[33mcommit ea32058eace9ddee5aa5026d71f7e859b6592ac6[m
+Author: heka <Aee23530@gmail.com>
+Date:   Thu Mar 6 17:48:42 2025 +0200
+
+    work on login
+
+[33mcommit be1dd2fd9818ab7357f682451ba5515858229733[m
+Author: heka <Aee23530@gmail.com>
+Date:   Thu Mar 6 00:30:42 2025 +0200
+
+     create structure

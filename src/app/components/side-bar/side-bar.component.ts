@@ -82,14 +82,14 @@ export class SideBarComponent {
         return '/main/cash/in';
       case 'سندات الصرف':
         return '/main/cash/out';
-        case 'فواتير المشتريات':
+      case 'فواتير المشتريات':
           return '/main/purchase';
       case 'اضافة فاتورة مشتريات':
         return '/main/purchase/create';
       case 'اضافة فاتورة مبيعات':
-        return '/main/add';
+        return '/main/sell/create';
       case 'فواتير المبيعات':
-        return '/main/list';
+        return '/main/sell';
       case 'اضافه اوردر جديد':
         return '/main/add';
       case 'عرض الاوردرات':

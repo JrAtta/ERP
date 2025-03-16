@@ -1,0 +1,183 @@
+<div class="container-fluid  mb-5 p-4 ">
+
+
+  <form [formGroup]="createsellForm" (ngSubmit)="submitCreateSellForm()">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header p-4 pb-0  bg-white">
+      <h4 class="  pb-2 ">اضافة فاتورة مبيعات  جديدة
+      </h4>
+    </div>
+      <div class="card-body p-0 pt-4 pb-3">
+
+        <div class="row px-4 ">
+
+
+              <!-- المخزن -->
+              <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+                <label for="inventory" class="form-label">المخزن</label>
+                <select  id="inventory" class="form-select" >
+                  <option value="" selected> اختر المخزن</option>
+                  <option > مخزن 1</option>
+                </select>
+              </div>
+
+
+             <!-- نوع الشخص-->
+             <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+              <label for="type" class="form-label">نوع الشخص</label>
+              <select  id="type" class="form-select" >
+                <option value="" selected> العميل</option>
+                <option > المورد</option>
+              </select>
+            </div>
+
+              <!-- الأشخاص-->
+              <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+                <label for="stakeholder" class="form-label">الأشخاص</label>
+                <select  id="stakeholder" class="form-select" >
+                  <option value="" disabled selected >   اختر نوع الشخص اولا</option>
+
+                </select>
+              </div>
+
+          <!-- كود الفاتورة -->
+          <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="codeBill" class="form-label">كود الفاتورة</label>
+            <input type="text" id="codeBill" class="form-control" formControlName="codeBill">
+            @if(createsellForm.get('codeBill')?.invalid && createsellForm.get('codeBill')?.touched){
+              @if (createsellForm.get('codeBill')?.getError('required')) {
+                <small class="text-danger">هذا الحقل مطلوب.</small>
+              }
+            }
+          </div>
+
+            <!-- الخزنة -->
+              <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+                <label for="treasury" class="form-label">الخزنة</label>
+                <select  id="treasury" class="form-select" >
+                  <option value="" disabled selected> اختر الخزنة</option>
+                  <option> الخزنة الرئيسيه</option>
+                </select>
+              </div>
+
+            <!-- نوع الفاتورة -->
+              <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+                <label for="billType" class="form-label">نوع الفاتورة</label>
+                <select  id="billType" class="form-select" >
+                  <option value="" disabled selected >   اختر نوع الفاتورة</option>
+                  <option  > فاتورة اجل</option>
+                  <option  > فاتورة مدفوعة</option>
+                </select>
+              </div>
+
+
+              <hr class="my-4">
+
+              <!-- الاصناف-->
+              <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden  ">
+               <div class="flex-center gap-3">
+                <div class="w-100">
+                  <label for="category" class="form-label">الاصناف</label>
+                  <select  id="category" class="form-select" >
+                    <option value="" disabled selected >   اخترالصنف</option>
+                  </select>
+                 </div>
+                 <button type="button" class="  btn btn-primary align-self-end" title="btn">
+                  <i class="fas fa-plus fa-lg"></i>
+                 </button>
+               </div>
+              </div>
+
+              <!-- تاريخ انشاء الفاتورة-->
+       <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden  ">
+         <label for="createBillDate" class="form-label">تاريخ انشاء الفاتورة</label>
+         <input type="date" id="createBillDate" class="form-control" readonly value="2025-03-15" disabled >
+       </div>
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class=" data-table border rounded card     " dir="rtl">
+
+        <div class="card-header p-4 pb-0  bg-white border-0">
+          <h4 class=" h5  pb-2 ">الاصناف
+          </h4>
+        </div>
+
+        <div class="card-body  p-0">
+
+          <table class="table table-hover text-nowrap transition bg-dark mb-0 ">
+            <thead class="small ">
+              <tr>
+                <th colspan="1" class="border text-secondary ">#</th>
+                <th colspan="1" class="border text-secondary ">اسم المنتج</th>
+                <th colspan="1" class="border text-secondary ">الكمية</th>
+                <th colspan="1" class="border text-secondary ">سعر شراء</th>
+                <th colspan="1" class="border text-secondary ">خصم علي المنتج	</th>
+                <th colspan="1" class="border text-secondary ">سعر البيع</th>
+                <th colspan="1" class="border text-secondary ">سعر بيع الجمله	</th>
+                <th colspan="1" class="border text-secondary ">سعر بيع النص جمله	</th>
+                <th colspan="1" class="border text-secondary ">اجمالي الكمية الموجودة بالمخزن	</th>
+                <th colspan="1" class="border text-secondary ">اجمالي السعر	</th>
+                <th colspan="1" class="border text-secondary ">الاجراء</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <!-- empty -->
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+
+
+      </div>
+
+
+      <div class="card mt-5" dir="rtl">
+
+
+          <div class="card-body">
+
+             <!--الاجمالي العام -->
+          <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="total" class="form-label">الاجمالي العام :          </label>
+            <input type="number" id="total" class="form-control" disabled value="0">
+          </div>
+
+
+
+
+             <!--الخصم -->
+          <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+            <label for="dis" class="form-label">الخصم :</label>
+            <input type="number" id="dis" class="form-control" >
+          </div>
+
+            <!--  الاجمالي بعد الخصم/الضربية -->
+            <div class="mb-3 col-md-4 col-sm-8 col-12 overflow-hidden ">
+              <label for="totalAfterTaxAndDis" class="form-label">الاجمالي بعد الخصم/الضربية:</label>
+              <input type="number" id="totalAfterTaxAndDis" class="form-control" disabled value="0">
+            </div>
+
+
+          </div>
+
+        </div>
+    <div class=" d-flex justify-content-start  mt-3 p-3">
+      <button class="btn btn-primary  p-2 px-4  " type="submit" >
+        بحث
+      </button>
+    </div>
+  </form>
+
+
+
+</div>
