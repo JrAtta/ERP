@@ -1,20 +1,18 @@
-
 {
   "version": 2,
   "builds": [
     {
-      "src": "dist/erp/browser/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "dist/erp/server/main.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/erp/server/**", "dist/erp/browser/**"]
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/erp/server/main.js"
+      "dest": "dist/erp/server/server.mjs"
     }
   ]
 }
