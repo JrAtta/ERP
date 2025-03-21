@@ -1,0 +1,26 @@
+.container-fluid
+{
+  background: #F6F8FB;
+  .data-table{
+    .card-body{
+      width: 100%;
+      overflow-x: auto;
+
+      .form-select{
+
+        &:focus{
+          box-shadow: none;
+          border-color: #787878;
+        }
+      }
+      td{
+        height: 70px;
+
+      }
+      thead th{
+        background: #F6F8FB;
+      }
+    }
+    }
+
+}

@@ -43,6 +43,12 @@
           }
         }
 
+        <!-- رسالة الخطأ -->
+       <div>
+        @if (errorMessage) {
+          <small class="text-danger">{{errorMessage}}</small>
+        }
+       </div>
         <button class=" btn-main mt-4 w-100 " type="submit"> Sign in </button>
        </form>
       </div>

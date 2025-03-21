@@ -1,0 +1,218 @@
+<div class="container-fluid mt-3  mb-5  ">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header border-0 p-4  bg-white">
+      <h2 class=" fw-bold ">اضافة حالة اوردر
+
+      </h2>
+    </div>
+    <div class="card-body p-0 ">
+      <form [formGroup]="orderStatusForm" (ngSubmit)="submitOrderStatusForm()" class="">
+
+        <div class="row px-4">
+
+          <!-- nameAr -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="nameAr" class="form-label "> اسم الحالة (عربي)</label>
+            <input type="text" formControlName="nameAr" class="form-control" id="nameAr" placeholder=" ادخل اسم الحالة ">
+
+            <!-- validation nameAr -->
+            @if (orderStatusForm.get('nameAr')?.invalid && orderStatusForm.get('nameAr')?.touched) {
+            @if (orderStatusForm.get('nameAr')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (orderStatusForm.get('nameAr')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
+            }
+            }
+          </div>
+
+          <!-- nameEn -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="nameEn" class="form-label ">اسم الحالة (انجليزي)</label>
+            <input type="text" formControlName="nameEn" class="form-control" id="nameEn" placeholder="Enter status name">
+
+            <!-- validation nameEn -->
+            @if (orderStatusForm.get('nameEn')?.invalid && orderStatusForm.get('nameEn')?.touched) {
+            @if (orderStatusForm.get('nameEn')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (orderStatusForm.get('nameEn')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالانجليزيه فقط.</small>
+            }
+            }
+          </div>
+
+
+        </div>
+        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+          <button class="btn btn-primary  p-2   " type="submit" style="width: 18%;">
+            حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class=" data-table border rounded card " dir="rtl">
+
+    <h3 class=" fs-5 p-4 card-header  bg-white ">
+       حالات الاوردر
+    </h3>
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary small text-uppercase">main.id</th>
+            <th colspan="1" class="border text-secondary small ">اسم الحالة (عربي)</th>
+            <th colspan="1" class="border text-secondary small ">اسم الحالة (انجليزي)</th>
+            <th colspan="1" class="border text-secondary small ">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="">
+            <th class="pe-3">1</th>
+            <td class="fs-5  ">جديد</td>
+            <td class="   ">new</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr class="">
+            <th class="pe-3">2</th>
+            <td class="fs-5  ">جاهز للشحن</td>
+            <td class="   ">Ready For Shipping</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr class="">
+            <th class="pe-3">2</th>
+            <td class="fs-5  ">	ملغى</td>
+            <td class="   ">canceled</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr class="">
+            <th class="pe-3">4</th>
+            <td class="fs-5  ">	تم الاستلام	</td>
+            <td class="   ">delivered</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr class="">
+            <th class="pe-3">5</th>
+            <td class="fs-5  ">	تم الاستلام و التحصيل</td>
+            <td class="   ">delivered and paid </td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr class="">
+            <th class="pe-3">6</th>
+            <td class="fs-5  ">	</td>
+            <td class="  ">discard </td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 1 الي 4 من كل 4 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>

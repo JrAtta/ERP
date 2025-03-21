@@ -1,0 +1,60 @@
+.container-fluid{
+  font-family:  monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width:992px) {
+    align-items: start;
+    padding-top:70px;
+  }
+  .image{
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    img{
+      position: absolute;
+      left: calc(50% - 100px ); // to center img until loop started
+      top: 0;
+      width: 200px;
+
+      animation: loop  10s 5s linear infinite  ;
+
+    }
+
+
+      @keyframes loop {
+        0%{
+          left: 0;
+          transform: rotateY(0deg);
+        }
+        15%{
+          rotate: -40deg;
+          transform: rotateY(0deg);
+        }
+
+        49%{
+          transform: rotateY(0deg);
+        }
+        50%{
+          rotate: 0deg;
+          left: calc(100% - 200px);
+          transform: rotateY(180deg);
+        }
+        51%{
+          transform: rotateY(180deg);
+          rotate:0deg;
+        }
+        65%{
+          rotate: 40deg;
+        }
+
+        100%{
+          left: 0;
+          transform: rotateY(180deg);
+          rotate: 0deg;
+        }
+      }
+
+
+  }
+}

@@ -1,0 +1,109 @@
+<div class="container-fluid my-4">
+
+  <div class="card" dir="rtl">
+
+    <div class="card-header p-3 ">
+      <h4 class="fw-semibold">انشاء مشرف جديد</h4 >
+    </div>
+   <div class="form-container">
+    <form [formGroup]="createAdminForm" (ngSubmit)="submitform()">
+      <div class="card-body p-5">
+
+        <div class="row g-4 flex-column">
+
+          <!-- الصورة -->
+      <div class="col-md-8 col-sm-10 col-12 ">
+        <div class="row g-4 align-items-end">
+          <div class="col-md-6 col-12 img-container border rounded overflow-hidden flex-center p-0">
+            <div *ngIf="imagePreview" class="w-100">
+              <img [src]="imagePreview" alt="Uploaded Image" class="w-100 object-fit-cover" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12">
+            <label for="img" class="form-label">الصورة</label>
+            <input type="file" (change)="onFileSelected($event)" accept="image/*" id="img" class="form-control" formControlName="img" />
+            <p *ngIf="errorMessage" class="text-danger mb-0">{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- الاسم -->
+      <div class="col-md-6 col-sm-10 col-12">
+        <label for="name" class="form-label">الاسم</label>
+        <input type="text" id="name" formControlName="name" class="form-control">
+        <small class="text-danger" *ngIf="createAdminForm.get('name')?.touched && createAdminForm.get('name')?.hasError('required')">
+          الاسم مطلوب
+        </small>
+      </div>
+
+      <!-- البريد الإلكتروني -->
+      <div class="col-md-6 col-sm-10 col-12">
+        <label for="email" class="form-label">البريد الإلكتروني</label>
+        <input type="email" id="email" formControlName="email" class="form-control">
+        <small class="text-danger" *ngIf="createAdminForm.get('email')?.touched && createAdminForm.get('email')?.hasError('required')">
+          البريد الإلكتروني مطلوب
+        </small>
+        <small class="text-danger" *ngIf="createAdminForm.get('email')?.touched && createAdminForm.get('email')?.hasError('email')">
+          يرجى إدخال بريد إلكتروني صالح
+        </small>
+      </div>
+
+      <!-- الفرع -->
+      <div class="col-md-6 col-sm-10 col-12">
+        <label for="branch" class="form-label">الفرع</label>
+        <select id="branch" class="form-select" formControlName="branch">
+          <option value="" selected disabled>اختر الفرع</option>
+          <option>الفرع الرئيسي</option>
+        </select>
+        <small class="text-danger" *ngIf="createAdminForm.get('branch')?.touched && createAdminForm.get('branch')?.hasError('required')">
+          الفرع مطلوب
+        </small>
+      </div>
+
+      <!-- كلمة المرور -->
+      <div class="col-md-6 col-sm-10 col-12">
+        <label for="password" class="form-label">كلمة المرور</label>
+        <div class="position-relative">
+          <input class="form-control pass" [type]="showPass ? 'text' : 'password'" id="password" formControlName="password">
+          <button class="eye position-absolute" (click)="showPassValidtiy()" type="button" title="Show/Hide">
+            <i class="fas fa-eye" *ngIf="showPass"></i>
+            <i class="fas fa-eye-slash" *ngIf="!showPass"></i>
+          </button>
+        </div>
+        <div *ngIf="createAdminForm.get('password')?.touched && createAdminForm.get('password')?.errors && createAdminForm.get('password')?.invalid">
+          <small class="text-danger" *ngIf="createAdminForm.get('password')?.hasError('required')">
+            كلمة المرور مطلوبة
+          </small>
+          <small class="text-danger" *ngIf="createAdminForm.get('password')?.hasError('minlength')">
+            كلمة المرور يجب أن تكون 6 أحرف على الأقل
+          </small>
+        </div>
+      </div>
+
+      <!-- تأكيد كلمة المرور -->
+      <div class="col-md-6 col-sm-10 col-12">
+        <label for="confirmPassword" class="form-label">تأكيد كلمة المرور</label>
+        <div class="position-relative">
+          <input class="form-control pass" [type]="showPass ? 'text' : 'password'" id="confirmPassword" formControlName="passwordConfirm">
+
+        </div>
+        <div *ngIf="createAdminForm.get('passwordConfirm')?.touched && createAdminForm.hasError('mismatch')">
+
+          <small class="text-danger" >
+            كلمتا المرور غير متطابقتين
+          </small>
+        </div>
+      </div>
+        </div>
+
+
+
+    </div>
+    <div class="card-footer p-4">
+      <button type="submit" class="btn btn-primary px-3 fs-5"> ارسال</button>
+    </div>
+  </form>
+   </div>
+  </div>
+</div>

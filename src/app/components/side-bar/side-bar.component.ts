@@ -43,7 +43,7 @@ export class SideBarComponent {
       case 'الرئيسية':
         return '/main/home';
       case 'الخزينه':
-        return '/main/treasury';
+        return '/main/safes';
       case 'المدراء':
         return '/main/managers';
       default:
@@ -88,22 +88,22 @@ export class SideBarComponent {
         return '/main/purchase/create';
       case 'اضافة فاتورة مبيعات':
         return '/main/sell/create';
-      case 'فواتير المبيعات':
+      case 'فواتير المبيعات':   // still not exist *****************
         return '/main/sell';
-      case 'اضافه اوردر جديد':
-        return '/main/add';
+      case 'اضافه اوردر جديد': // still not exist *****************
+        return '/main/order/create';
       case 'عرض الاوردرات':
-        return '/main/list';
+        return '/main/order';
       case 'حالة الاوردرات':
-        return '/main/status';
+        return '/main/order/status';
       case 'المصاريف':
-        return '/main/list';
+        return '/main/expense';
       case 'انواع المصروفات':
-        return '/main/types';
+        return '/main/expense/type';
       case 'انواع الايرادات':
-        return '/main/types';
+        return '/main/revenue/type';
       case 'الايرادات':
-        return '/main/list';
+        return '/main/revenue';
       default:
         return '/';
     }

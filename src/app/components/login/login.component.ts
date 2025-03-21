@@ -12,6 +12,9 @@ import {  Route, Router } from '@angular/router';
 })
 export class LoginComponent {
   showPass:boolean = false;
+  errorMessage!:string | null;
+  private readonly ADMIN_EMAIL = 'heka@admin.com';
+  private readonly ADMIN_PASS = 'heka1511';
   loginForm !:FormGroup;
   constructor(private _FormBuilder: FormBuilder , private _Router : Router){
     this.loginForm = this._FormBuilder.group({
@@ -21,12 +24,15 @@ export class LoginComponent {
   }
 
   submitLoginForm(){
-    if(this.loginForm.valid){
-      // console.log(this.loginForm)
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
+    if(email === this.ADMIN_EMAIL  && password === this.ADMIN_PASS){
+      this.errorMessage = null;
+      localStorage.setItem('isLoggedIn' , 'true')
       this._Router.navigate(['/main']);
     }else{
-      this.loginForm.markAllAsTouched();
-
+      // this.loginForm.markAllAsTouched();
+      this.errorMessage = 'الإيميل أو كلمة المرور غير صحيحة';
     }
   }
   showPassValidtiy(){

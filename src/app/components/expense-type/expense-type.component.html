@@ -1,0 +1,90 @@
+<div class="container-fluid mt-3  mb-5  ">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header border-0 p-4  bg-white">
+      <h2 class=" fw-bold ">إضافة نوع مصروف
+
+      </h2>
+    </div>
+    <div class="card-body p-0 ">
+      <form [formGroup]="expenseForm" (ngSubmit)="submitExpenseForm()" class="">
+
+        <div class="row px-4">
+
+          <!-- nameAr -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="nameAr" class="form-label "> الإسم  (عربي)</label>
+            <input type="text" formControlName="nameAr" class="form-control" id="nameAr">
+
+            <!-- validation nameAr -->
+            @if (expenseForm.get('nameAr')?.invalid && expenseForm.get('nameAr')?.touched) {
+            @if (expenseForm.get('nameAr')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (expenseForm.get('nameAr')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالعربي فقط.</small>
+            }
+            }
+          </div>
+
+          <!-- nameEn -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="nameEn" class="form-label ">الإسم (انجليزي)</label>
+            <input type="text" formControlName="nameEn" class="form-control" id="nameEn">
+
+            <!-- validation nameEn -->
+            @if (expenseForm.get('nameEn')?.invalid && expenseForm.get('nameEn')?.touched) {
+            @if (expenseForm.get('nameEn')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            @if (expenseForm.get('nameEn')?.errors?.['pattern']) {
+            <small class="text-danger">الاسم يجب أن يكون بالانجليزيه فقط.</small>
+            }
+            }
+          </div>
+
+
+        </div>
+        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+          <button class="btn btn-primary  p-2   " type="submit" style="width: 18%;">
+            حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class=" data-table border rounded card " dir="rtl">
+
+    <h3 class=" fs-5 p-4 card-header  bg-white ">
+      نوع المصروف
+    </h3>
+
+    <div class="card-body px-0 pb-0">
+
+      <table class="table table-hover text-nowrap transition  mb-0">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary small text-uppercase">main.id</th>
+            <th colspan="1" class="border text-secondary  ">الإسم</th>
+            <th colspan="1" class="border text-secondary  ">الاسم بالعربي	</th>
+            <th colspan="1" class="border text-secondary  ">الاسم بالانجليزي</th>
+            <th colspan="1" class="border text-secondary  ">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+    </div>
+
+
+
+  </div>
+
+</div>

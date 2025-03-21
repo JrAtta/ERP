@@ -1,0 +1,144 @@
+<div class="container-fluid mt-3  mb-5  ">
+  <div class="card  mb-4" dir="rtl">
+    <div class="card-header border-0 p-4  bg-white">
+      <h2 class=" fw-bold ">إضافة خزنة
+
+      </h2>
+    </div>
+    <div class="card-body p-0 ">
+      <form [formGroup]="safesForm" (ngSubmit)="submitSafesForm()" class="">
+
+        <div class="row px-4">
+
+          <!-- name -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="name" class="form-label "> الإسم </label>
+            <input type="text" formControlName="name" class="form-control" id="name">
+
+            <!-- validation name -->
+            @if (safesForm.get('name')?.invalid && safesForm.get('name')?.touched) {
+            @if (safesForm.get('name')?.errors?.['required']) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+            }
+            }
+          </div>
+
+          <!-- balance -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="balance" class="form-label ">الرصيد الحالي</label>
+            <input type="number" class="form-control" id="balance">
+          </div>
+
+          <!-- main.branch -->
+          <div class="mb-3 col-md-5 col-12">
+            <label for="branch" class="form-label">main.branches</label>
+            <select  id="branch" class="form-select">
+              <option value="" selected disabled> admin.choose_branch</option>
+              <option value="" > الفرع الرئيسي</option>
+            </select>
+          </div>
+
+            <!-- discription -->
+            <div class="mb-3 col-md-5 col-12">
+              <label for="discription" class="form-label ">الوصف</label>
+             <textarea  class="form-control" id="discription" rows="1"></textarea>
+            </div>
+
+        </div>
+        <div class="  d-flex justify-content-end card-footer mt-3 p-3">
+          <button class="btn btn-primary  p-2 px-5  " type="submit" >
+            حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class=" data-table border rounded card " dir="rtl">
+
+    <h3 class=" fs-5 p-4 card-header  bg-white ">
+      الخزن
+    </h3>
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary small text-uppercase">#</th>
+            <th colspan="1" class="border text-secondary small ">الاسم</th>
+            <th colspan="1" class="border text-secondary small ">الوصف</th>
+            <th colspan="1" class="border text-secondary small ">الرصيد الحالي</th>
+            <th colspan="1" class="border text-secondary small ">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="">
+            <th class="pe-3">1</th>
+            <td class="fs-5  ">الخزنه الرئيسيه</td>
+            <td class="   "></td>
+            <td class="   ">10000</td>
+            <td class="  d-flex justify-content-start  align-items-center  gap-3  ">
+              <button class="transition btn btn-outline-primary flex-center gap-3 ">
+                <i class="fas fa-user-pen"></i>
+                <span>تعديل</span>
+              </button>
+              <button class="transition btn btn-outline-danger flex-center  gap-3 ">
+                <i class="fas fa-trash"></i>
+                <span>حذف</span>
+              </button>
+              <button class="transition btn btn-outline-info flex-center  gap-3 ">
+                <i class="fa-regular fa-circle-check"></i>
+                <span>كشف حساب الخزنه</span>
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 1 الي 4 من كل 4 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>

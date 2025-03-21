@@ -1,0 +1,148 @@
+<div class="container-fluid my-4 ">
+  <div class="flex-between">
+    <button class="btn btn-primary flex-center gap-2" (click)="addOrder()">
+      اضافه اوردر جديد
+      <i class="fas fa-plus"></i>
+    </button>
+    <h3 class="fw-semibold text-end px-2 fs-4 mb-0">
+      الاوردرات
+    </h3>
+  </div>
+  <!-- card 1 -->
+  <div class="card my-4" dir="rtl">
+    <div class="card-header py-3 fs-5 ">
+      الاوردرات
+    </div>
+   <form [formGroup]="orderForm" (ngSubmit)="submitOrderForm()">
+    <div class="card-body row">
+
+      <!-- كود الفاتورة -->
+      <div class="mb-3 col-md-4  col-12">
+        <label for="code" class="form-label "> كود الفاتورة</label>
+        <input type="text" id="code" class="form-control" formControlName="code">
+        @if (orderForm.get('code')?.invalid && orderForm.get('code')?.touched) {
+          @if (orderForm.get('code')?.getError('required')) {
+            <small class="text-danger">هذا الحقل مطلوب.</small>
+          }
+        }
+      </div>
+
+      <!-- رقم هاتف العميل -->
+      <div class="mb-3 col-md-4  col-12">
+        <label for="phoneNum" class="form-label "> رقم هاتف العميل</label>
+        <input type="text" id="phoneNum" class="form-control">
+      </div>
+
+      <!-- اسم العميل-->
+      <div class="mb-3 col-md-4  col-12">
+        <label for="name" class="form-label "> اسم العميل</label>
+        <input type="text" id="name" class="form-control">
+      </div>
+
+      <!-- حالة الاوردر -->
+      <div class="mb-3 col-sm-4 col-12">
+        <label for="orderStatus" class="form-label "> حالة الاوردر</label>
+        <select  id="orderStatus" class="form-control">
+          <option value=""  selected disabled >اختر الحالة</option>
+          <option  >تم الاستلام</option>
+          <option  >تم الاستلام والتحصيل</option>
+          <option  >جاهز للشحن</option>
+          <option  >جديد</option>
+          <option  >مرتجع</option>
+          <option  >ملغي</option>
+        </select>
+      </div>
+
+      <!-- المخزن-->
+      <div class="mb-3 col-sm-4 col-12">
+        <label for="orderStatus" class="form-label "> المخزن</label>
+        <select  id="orderStatus" class="form-control">
+          <option value=""  selected disabled >اختر المخزن</option>
+          <option  >مخزن 1</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="card-footer text-start">
+      <button type="submit" class="btn btn-primary  px-3"> حفظ</button>
+    </div>
+   </form>
+
+  </div>
+
+
+
+  <!-- table -->
+
+  <div class=" data-table border rounded card " dir="rtl">
+
+    <div class="card-body px-0">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary  text-uppercase"> # </th>
+            <th colspan="1" class="border text-secondary  "> المورد</th>
+            <th colspan="1" class="border text-secondary  "> الحركه </th>
+            <th colspan="1" class="border text-secondary  ">التاريخ</th>
+            <th colspan="1" class="border text-secondary  ">الرصيد قبل</th>
+            <th colspan="1" class="border text-secondary  ">المبلغ</th>
+            <th colspan="1" class="border text-secondary  ">الرصيد بعد </th>
+            <th colspan="1" class="border text-secondary  ">الوصف</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="text-center">
+            <td colspan="8" >
+              جدول خالي
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 1 الي 4 من كل 4 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+

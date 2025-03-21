@@ -1,0 +1,71 @@
+<div class="container-fluid my-4">
+
+  <div class="d-flex justify-content-end p-2  " >
+    <button class="btn btn-secondary px-5 fs-5" (click)="createRevenue()">اضافة وارد</button>
+    </div>
+  <div class=" data-table border rounded card mt-3 m-3" dir="rtl">
+    <div class="card-body ">
+      <div class="flex-between px-4 mb-3 flex-wrap gap-2">
+        <div class="flex-center gap-2 ">
+          <span class="h5 mb-0">اظهار</span>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">25</option>
+            <option value="2">50</option>
+            <option value="3">All</option>
+          </select>
+          <span class="h5 mb-0">السجلات</span>
+        </div>
+        <div class="flex-center gap-2 align-items-end ">
+          <label for="search" class="form-label fs-5 mb-0 ">بحث</label>
+          <input type="text" class="form-control " id="search" placeholder="بتبحث عن اي">
+        </div>
+      </div>
+      <table class="table table-hover text-nowrap transition  ">
+        <thead class="small ">
+          <tr>
+            <th colspan="1" class="border text-secondary small">المبغ</th>
+            <th colspan="1" class="border text-secondary small ">التاريخ</th>
+            <th colspan="1" class="border text-secondary small ">طريقة الدفع</th>
+            <th colspan="1" class="border text-secondary small ">الفرع/البنك</th>
+            <th colspan="1" class="border text-secondary small ">نوع الوارد</th>
+            <th colspan="1" class="border text-secondary small ">العمليات</th>
+          </tr>
+        </thead>
+        <tbody class="">
+            <tr>
+              <td colspan="6" class="text-center">no data avaliable</td>
+            </tr>
+      </table>
+
+      <div class="flex-between px-4 flex-wrap gap-2  pb-3">
+
+        <h6 class="mb-0 text-nowrap px-2 ">
+          اظهار السجلات من 0 الي 0 من كل 0 السجلات
+        </h6>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-end gap-1 mb-0 pe-0 ">
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent">الاول</a>
+            </li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">السابق</a>
+            </li>
+            <li class="page-item "><a class="page-link p-0 px-2 cursor text-dark">1</a></li>
+            <li class="page-item  disabled"><a class="page-link p-0 px-2 border-0 bg-transparent" href="">التالي</a>
+            </li>
+            <li class="page-item  disabled">
+              <a class="page-link p-0 px-2 border-0 bg-transparent" href="">الاخير</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+</div>
