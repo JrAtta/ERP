@@ -4,17 +4,27 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import { existsSync } from 'node:fs';
 
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(browserDistFolder, 'index.html'); // استخدم index.html من browser
+  const browserDistFolder = join(process.cwd(), 'dist/erp/browser');
+  const indexHtml = join(browserDistFolder, 'index.html');
+
+  if (!existsSync(indexHtml)) {
+    console.error('index.html not found at:', indexHtml);
+    server.get('*', (req, res) => res.status(500).send('Server setup error: index.html not found'));
+    return server;
+  }
+
 
   const commonEngine = new CommonEngine();
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
+
+
 
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
